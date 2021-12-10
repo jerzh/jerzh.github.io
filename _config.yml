@@ -32,6 +32,9 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 theme: minima
 plugins:
   - jekyll-feed
+markdown: kramdown
+kramdown:
+   math_engine: katex
 
 # Exclude from processing.
 # The following items will not be processed, by default.

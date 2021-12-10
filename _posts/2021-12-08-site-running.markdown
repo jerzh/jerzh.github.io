@@ -2,8 +2,9 @@
 layout: post
 title:  "The website is up :)"
 date:   2021-12-08 22:50:00 -0500
-categories:
+categories: status
 ---
+
 I figured out how to install Ruby (with `rbenv`) and get Jekyll to properly serve the site! Wow, the site looks nice.
 
 A bit of background is in order. Aside from being about me, I want this site to be an *infodump*, in the sense of being a receptacle for anything pertaining to my interests that I encounter or create. I find interest in many things, and there isn't much I can do about it, so I thought I might make this information as publicly accessible as possible. There are also a fair amount of idiosyncratic documents and spreadsheets I have that I think would be entertaining for people to look at.
