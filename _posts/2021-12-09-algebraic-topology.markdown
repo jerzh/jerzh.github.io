@@ -39,7 +39,7 @@ Interesting concepts and theorems:
 * [Poincaré duality](https://en.wikipedia.org/wiki/Poincar%C3%A9_duality): homology and cohomology are closely related for oriented closed manifolds
 
 Development notes:
-* [Setting up KaTeX](https://gendignoux.com/blog/2020/05/23/katex.html#katex-integration-in-the-browser) (failed attempts [1](https://varunagrawal.github.io/2018/03/27/latex-jekyll/) [2](https://xuc.me/blog/katex-and-jekyll/) due to outdated versions)
+* [Setting up KaTeX](https://codewrites.me/jekyll/katex/blog/2020/08/26/use-katex-gh-pages/) (failed attempts [1](https://varunagrawal.github.io/2018/03/27/latex-jekyll/) [2](https://xuc.me/blog/katex-and-jekyll/) [3](https://gendignoux.com/blog/2020/05/23/katex.html#katex-integration-in-the-browser) - these all either used to work or work in other environments, but not GitHub Pages)
 * [Overriding theme CSS](https://tomkadwill.com/2017/12/16/how-to-override-css-styles-in-jekyll.html)
 * [Customizing header and footer](https://www.eliascarter.ca/2021/09/11/customizing-jekyll-header-and-footer.html)
 * I find it hilarious that nearly every blog I've looked at so far has had the Jekyll Minima theme. Maybe I'll consider changing the theme of this blog.
