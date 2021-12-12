@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Linguistics is a woefully underappreciated field"
-date:   2021-12-12 13:12:00 -0500
+date:   2021-12-12 18:32:00 -0500
 categories: ling
 ---
 
