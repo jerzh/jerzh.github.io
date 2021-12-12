@@ -2,10 +2,10 @@
 layout: post
 title:  "IV regression: econometrics is way crazier than you thought"
 date:   2021-12-11 02:33:00 -0500
-categories: econ econometrics
+categories: econ ometrics
 ---
 
-The age-old question is: correlation or causation? One can deduce from empirical data that the more years of education you get ($$X$$), the higher your earnings ($$Y$$) are likely to be. But how much of this effect is actually from education, and how much is from other factors ([confounding variables](https://en.wikipedia.org/wiki/Confounding))?
+The age-old question is: [correlation or causation](https://en.wikipedia.org/wiki/Correlation_does_not_imply_causation)? One can deduce from empirical data that the more years of education you get ($$X$$), the higher your earnings ($$Y$$) are likely to be. But how much of this effect is actually from education, and how much is from other factors ([confounding variables](https://en.wikipedia.org/wiki/Confounding))?
 * Pre-existing socioeconomic class? If your parents are wealthier, you are more likely to be well-educated and also more likely to earn a lot.
 * Natural ability? If you are naturally smarter, you are more likely to stay in school and also more likely to work in a skilled profession.
 
