@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "A first PyTorch test: I am a wizard"
-date:   2021-12-14 01:16:00 -0500
+date:   2021-12-14 02:12:00 -0500
 categories: cs ml
 ---
 
