@@ -36,16 +36,16 @@ Takeaways:
 And that new framework is a [convolutional neural network](https://en.wikipedia.org/wiki/Convolutional_neural_network), or CNN, designed to encode 2D proximity data in a way that MLPs fail to do.
 
 The layers I used were:
-* convolution with 16 channels of kernel size 5
+* [convolution](https://en.wikipedia.org/wiki/Convolutional_neural_network#Convolutional_layer) with 16 channels of kernel size 5
 * ReLU
-* max pool with kernel size 2
+* [max pool](https://en.wikipedia.org/wiki/Convolutional_neural_network#Pooling_layer) with kernel size 2
 * convolution with 32 channels of kernel size 7
 * ReLU
 * max pool with kernel size 2
-* flatten
+* flatten (turn 2D data into 1D data)
 * linear (perceptron) to 10 outputs.
 
-With just 10 epochs, this CNN achieved 90.7% accuracy! Even 5 epochs was enough to beat the MLP, achieving 88.5% accuracy. Definitely still not converging to 100%, but already a big improvement.
+With just 10 epochs, this CNN achieved 90.7% accuracy! Even 5 epochs was enough to beat the MLP, achieving 88.5% accuracy. Definitely still not converging to 100%, but already an improvement.
 
 Further reading:
 * [PyTorch tutorials](https://pytorch.org/tutorials/): both gentle introductions and quickstart examples ("recipes")
