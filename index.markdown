@@ -1,8 +1,6 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 layout: home
+header: Hello!
 ---
 
-I hope for this site to be an infodump: I have lots of suggestions for interesting things to learn. Some might be useful and some might not, but I hope they are entertaining anyhow.
+If you are looking for the personal website of someone named Jeremy, then you are in the right place! Here is a data visualization about me to briefly entertain you.

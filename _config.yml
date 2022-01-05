@@ -18,15 +18,16 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: infodump
+title: jerzhou
+author: Jeremy Zhou
 email: jerzhou@mit.edu
 description: >- # this means to ignore newlines until "baseurl:"
   My personal website.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
-# github_username: invinciblejackalope
-# linkedin_username: b53aa7199
+github_username: invinciblejackalope
+linkedin_username: b53aa7199
 
 # Build settings
 theme: minima

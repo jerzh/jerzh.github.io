@@ -6,6 +6,8 @@ Blog post ideas:
 * Activity log (data analysis)
 * Overleaf documents (math)
 * Beatboxing
+* React
+* Baba Is You
 
 Development ideas:
 * Custom theme
