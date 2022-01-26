@@ -8,6 +8,7 @@ Blog post ideas:
 * Beatboxing
 * React
 * Baba Is You
+* Snare drumming + stick tricks
 
 Development ideas:
 * Custom theme

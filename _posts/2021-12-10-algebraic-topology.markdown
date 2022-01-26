@@ -3,6 +3,7 @@ layout: post
 title:  "Why algebraic topology is my favorite field of math"
 date:   2021-12-10 17:54:00 -0500
 categories: math algtop
+static: katex
 ---
 
 Ever wondered what field of math you should study? Say no more.
