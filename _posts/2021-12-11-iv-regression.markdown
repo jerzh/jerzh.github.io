@@ -3,7 +3,7 @@ layout: post
 title:  "IV regression: econometrics is way crazier than you thought"
 date:   2021-12-11 02:33:00 -0500
 categories: econ ometrics
-static: katex
+external: katex
 ---
 
 The age-old question is: [correlation or causation](https://en.wikipedia.org/wiki/Correlation_does_not_imply_causation)? One can deduce from empirical data that the more years of education you get ($$X$$), the higher your earnings ($$Y$$) are likely to be. But how much of this effect is actually from education, and how much is from other factors ([confounding variables](https://en.wikipedia.org/wiki/Confounding))?

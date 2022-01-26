@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
 
-  {%- include head.html static=page.static -%}
+  {%- include head.html external=page.external js=page.js -%}
 
   <body>
 
