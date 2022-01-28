@@ -7,8 +7,8 @@ Blog post ideas:
 * Overleaf documents (math)
 * Beatboxing
 * React
-* Baba Is You
 * Snare drumming + stick tricks
+* Cooking
 
 Development ideas:
 * Custom theme
