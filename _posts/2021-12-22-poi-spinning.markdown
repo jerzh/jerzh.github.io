@@ -3,6 +3,7 @@ layout: post
 title:  "Poi spinning is kind of like a better version of juggling"
 date:   2021-12-22 12:57:00 -0600
 categories: poi
+external: katex
 ---
 
 I highly recommend to anyone reading this the practice of [poi spinning](https://en.wikipedia.org/wiki/Poi_(performance_art)). Poi spinning is a form of dance that originated from the [Maori people](https://en.wikipedia.org/wiki/M%C4%81ori_people), the indigenous people of New Zealand. It involves instruments known as poi, which consist of objects attached to flexible tethers.

@@ -38,7 +38,7 @@ And this is barely the beginning. You might understand what's going on right now
 
 The main game itself is over 200 levels long, and many more have been added recently in levelpacks. As you progress through the levels, you encounter new mechanics, such as Sink, Move, Shift, Fall, etc. But this only happens every so often; much more important is finding all the ridiculous ways to use and exploit them. It's hard to stress how mind-boggling the game gets, aside from saying that I've spent over two hours on a single level. Multiple times.
 
-The thing is, the game is incredibly rewarding. When you discover a new trick, you feel the awe of discovering something new, and you feel so proud of yourself. And the game never stops giving. Honestly, I don't think I'm doing the game justice in trying to convey why it's so cool. I encourage you to [buy the game](https://store.steampowered.com/app/736260/Baba_Is_You/). It's $15 but has given me over 90 hours of fun and counting.
+The thing is, the game is incredibly rewarding. When you discover a new trick, you feel the awe of discovering something new, and you feel so proud of yourself. And the game never stops giving. Honestly, I don't think I'm doing the game justice in trying to convey why it's so cool. I encourage you to [buy the game](https://store.steampowered.com/app/736260/Baba_Is_You/) (not sponsored). It's $15 but has given me over 90 hours of fun and counting.
 
 Further reading:
 * [Baba Is You Wiki](https://babaiswiki.fandom.com/wiki/Baba_Is_You_Wiki)
