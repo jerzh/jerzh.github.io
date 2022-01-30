@@ -9,7 +9,13 @@ Blog post ideas:
 * React
 * Snare drumming + stick tricks
 * Cooking
+* Toki Pona
+* Algebraic geometry by examples
 
 Development ideas:
 * Custom theme
-* Visualization with # of posts per subject
+* "Projects" page
+* Visualization with # of posts per subject (D3)
+* Interactive activity log searcher (React?)
+* More math visuals with jsxgraph, manim, two.js, three.js, ?
+
