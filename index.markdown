@@ -1,7 +1,7 @@
 ---
 layout: home
 header: Hello!
-external: d3
+external: react
 js: index
 ---
 
