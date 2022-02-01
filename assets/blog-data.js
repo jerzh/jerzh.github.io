@@ -1,16 +1,13 @@
 ---
 ---
 
-let data = [
-  {% for post in site.posts %}
-    {
-      "title": "{{ post.title }}",
-      "categories": "{{ post.categories }}",
-      "word-count": countWords("{{ post.content }}"),
-      "url": "{{ post.url }}"
-    }
-    {% unless forloop.last %},{% endunless %}
-  {% endfor %}
+let data0 = [
+  {% for post in site.posts %}{
+    "title": "{{ post.title }}",
+    "categories": [{% for category in post.categories %}"{{ category }}"{% unless forloop.last %}, {% endunless %}{% endfor %}],
+    "word_count": countWords("{{ post.content | strip_newlines | escape }}"),
+    "url": "{{ post.url }}"
+  }{% unless forloop.last %}, {% endunless %}{% endfor %}
 ];
 
 // https://stackoverflow.com/questions/18679576/counting-words-in-string

@@ -1,6 +1,42 @@
-const width = 932;
+const width = 500;
 const height = width;
-// https://d3-wiki.readthedocs.io/zh_CN/master/Pack-Layout/
+
+// Processing data to fit the d3.hierarchy format
+let data = {
+  name: "root",
+  children: []
+};
+
+for (const post of data0) {
+  addCategory(data.children, post.categories, post);
+}
+
+function addCategory(obj, categories, post) {
+  if (categories.length == 0) {
+    next = {
+      name: post.title,
+      value: post.word_count,
+      url: post.url
+    };
+    obj.push(next);
+    return;
+  }
+  let category = categories.shift();
+  for (let child of obj) {
+    if (child.name === category) {
+      addCategory(child.children, categories, post);
+      return;
+    }
+  }
+  next = {
+    name: category,
+    children: []
+  }
+  obj.push(next);
+  addCategory(next.children, categories, post);
+}
+
+// https://observablehq.com/@d3/zoomable-circle-packing
 const root = d3.pack()
     .size([width, height])
     .padding(3)
@@ -9,19 +45,19 @@ const root = d3.pack()
     .sort((a, b) => b.value - a.value));
 let focus = root;
 let view;
-let color = color = d3.scaleLinear()
+let color = d3.scaleLinear()
     .domain([0, 5])
-    .range(["hsl(152,80%,80%)", "hsl(228,30%,40%)"])
+    .range(["hsl(211,80%,80%)", "hsl(135,80%,80%)"])
     .interpolate(d3.interpolateHcl);
 
+console.log(root);
 
-// https://observablehq.com/@d3/zoomable-circle-packing
 const svg = d3.select('#blog-bubbles')
   .append('svg')
     .attr("viewBox", `-${width / 2} -${height / 2} ${width} ${height}`)
     .style("display", "block")
     .style("margin", "0 -14px")
-    .style("background", color(0))
+    // .style("background", color(0))
     .style("cursor", "pointer")
     .on("click", (event) => zoom(event, root));
 
