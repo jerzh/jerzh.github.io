@@ -8,14 +8,14 @@ external: katex
 
 I highly recommend to anyone reading this the practice of [poi spinning](https://en.wikipedia.org/wiki/Poi_(performance_art)). Poi spinning is a form of dance that originated from the [Maori people](https://en.wikipedia.org/wiki/M%C4%81ori_people), the indigenous people of New Zealand. It involves instruments known as poi, which consist of objects attached to flexible tethers.
 
-![poi](/assets/poi.jpeg){:width="50%"}
+![poi](/assets/poi-spinning/poi.jpeg){:width="50%"}
 {:style="text-align: center;"}
 
 [Here](https://youtu.be/7GXAapbacBc) is a video of a traditional Maori poi dance.
 
 The art has spread around the world in many different forms, the most well-known of which is probably fire spinning (using poi heads that can be lit on fire). I personally learned poi spinning with glow poi (lit up by LEDs). Here is a long-exposure photo of me spinning glow poi.
 
-![static-v-triquetra](/assets/svt.jpeg){:width="50%"}
+![static-v-triquetra](/assets/poi-spinning/svt.jpeg){:width="50%"}
 {:style="text-align: center;"}
 
 There are two main reasons I think poi spinning is interesting.

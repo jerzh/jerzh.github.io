@@ -16,25 +16,25 @@ Let's take some standard puzzle-type games: jigsaw puzzles, sudokus, crosswords,
 
 You see, Baba Is You is a game about manipulating the game mechanics themselves.
 
-![baba-level-0](/assets/Island-00_Baba_Is_You.png){:width="100%"}
+![baba-level-0](/assets/baba-is-you/Island-00_Baba_Is_You.png){:width="100%"}
 {:style="text-align: center;"}
 
 You are this fluffy white character named Baba, and your objective is to get to the shiny yellow flag on the right. You can push around the rocks. Seems pretty natural, given the rules of the game written on the screen. But those rules are far from permanent.
 
-![baba-level-2](/assets/Island-02_Now_What_Is_This.png){:width="100%"}
+![baba-level-2](/assets/baba-is-you/Island-02_Now_What_Is_This.png){:width="100%"}
 {:style="text-align: center;"}
 
 What.
 
 I'm sure you can infer that you are the wall now and that flags are now your primary obstacle. How do you get past the flags? Well, the words are right there. You could just walk over to them and...nudge them a little bit.
 
-![baba-level-2-again](/assets/Island-02_Now_What_Is_This-2.png){:width="100%"}
+![baba-level-2-again](/assets/baba-is-you/Island-02_Now_What_Is_This-2.png){:width="100%"}
 
 That's better.
 
 And this is barely the beginning. You might understand what's going on right now, but Arvi has a way of finding endless interesting tricks even with rules as seemingly straightforward as Push and Stop. One single word can have so many different effects, and it's up to you to puzzle through it all and figure them out. I display a level here (Solitary Isle-Extra 5) for effect, but good luck. This level is notorious. (It doesn't explicitly have to do with the Stop rule; it's more about the mechanics of Push, which is implicit since Text is always Push by default.)
 
-![baba-level-2-e5](/assets/Dungeon.png){:width="100%"}
+![baba-level-2-e5](/assets/baba-is-you/Dungeon.png){:width="100%"}
 
 The main game itself is over 200 levels long, and many more have been added recently in levelpacks. As you progress through the levels, you encounter new mechanics, such as Sink, Move, Shift, Fall, etc. But this only happens every so often; much more important is finding all the ridiculous ways to use and exploit them. It's hard to stress how mind-boggling the game gets, aside from saying that I've spent over two hours on a single level. Multiple times.
 
