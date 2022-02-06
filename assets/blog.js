@@ -71,17 +71,32 @@ const node = svg.append("g")
       else window.location = d.data.url;
     });
 
-const label = svg.append("g")
-    .style("font", "10px sans-serif")
-    .attr("pointer-events", "none")
-    .attr("text-anchor", "middle")
-    .attr("dominant-baseline", "middle")
-  .selectAll("text")
+// const label = svg.append("g")
+//     .style("font", "10px sans-serif")
+//     .attr("pointer-events", "none")
+//     .attr("text-anchor", "middle")
+//     .attr("dominant-baseline", "middle")
+//   .selectAll("text")
+//   .data(root.descendants())
+//   .join("text")
+//     .style("fill-opacity", d => d.parent === root ? 1 : 0)
+//     .style("display", d => d.parent === root ? "inline" : "none")
+//     .text(d => d.data.name);
+
+// This is messy, but hopefully the text wrapping is worth it
+svg.append("g").attr("id", "textbox")
+
+new d3plus.TextBox()
+  .select("#textbox")
   .data(root.descendants())
-  .join("text")
-    .style("fill-opacity", d => d.parent === root ? 1 : 0)
-    .style("display", d => d.parent === root ? "inline" : "none")
-    .text(d => d.data.name);
+  .fontSize(10)
+  .text(d => d.data.name)
+  .x(d => d.x - 250)
+  .y(d => d.y - 250)
+  .height(200)
+  .render();
+
+const label = d3.selectAll("#textbox g text")
 
 zoomTo([root.x, root.y, root.r * 2]);
 

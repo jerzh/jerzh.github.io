@@ -3,7 +3,7 @@ layout: blog
 title: Blog
 header: If this can be called a blog
 permalink: /blog/
-external: d3
+external: [d3, d3plus-text]
 js: [blog-data, blog]
 ---
 
