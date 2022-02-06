@@ -37,9 +37,11 @@ function addCategory(obj, categories, post) {
 }
 
 // https://observablehq.com/@d3/zoomable-circle-packing
+// d3.pack() calculates the location and radius of each circle
 const root = d3.pack()
     .size([width, height])
     .padding(3)
+// d3.hierarchy() organizes the data into a hierarchy
   (d3.hierarchy(data)
     .sum(d => d.value)
     .sort((a, b) => b.value - a.value));
@@ -50,13 +52,16 @@ let color = d3.scaleLinear()
     .range(["hsl(135,80%,80%)", "hsl(211,80%,80%)"])
     .interpolate(d3.interpolateHcl);
 
-const svg = d3.select('#blog-bubbles')
-  .append('svg')
+// Helpful to call console.log(root) to look at exact structure of data
+
+const svg = d3.select("#blog-bubbles")
+  .append("svg")
     .attr("viewBox", `-${width / 2} -${height / 2} ${width} ${height}`)
     .style("display", "block")
     .style("margin", "0 -14px")
     .on("click", (event) => zoom(event, root));
 
+// Must draw circles before text since svgs have z-order based on draw order
 const node = svg.append("g")
   .selectAll("circle")
   .data(root.descendants().slice(1))
@@ -75,6 +80,7 @@ const label = svg.append("g")
     .style("font", "10px sans-serif")
     .attr("pointer-events", "none")
     .attr("text-anchor", "middle")
+    // This is how you vertically align text on given coordinates
     .attr("dominant-baseline", "middle")
   .selectAll("text")
   .data(root.descendants())
@@ -108,8 +114,8 @@ function zoom(event, d) {
         return t => zoomTo(i(t));
       });
 
+  // Only allow nodes in the next layer to be clicked
   node.attr("pointer-events", "none")
-
   node.filter(d => d.parent === focus)
     .attr("pointer-events", null)
 
