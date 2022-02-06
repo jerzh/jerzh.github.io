@@ -2,7 +2,7 @@
 layout: post
 title:  "IV regression: econometrics is way crazier than you thought"
 date:   2021-12-11 02:33:00 -0500
-categories: econ ometrics
+categories: econ econometrics
 external: katex
 ---
 

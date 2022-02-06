@@ -46,35 +46,36 @@ const root = d3.pack()
 let focus = root;
 let view;
 let color = d3.scaleLinear()
-    .domain([0, 5])
-    .range(["hsl(211,80%,80%)", "hsl(135,80%,80%)"])
+    .domain([0, 3])
+    .range(["hsl(135,80%,80%)", "hsl(211,80%,80%)"])
     .interpolate(d3.interpolateHcl);
-
-console.log(root);
 
 const svg = d3.select('#blog-bubbles')
   .append('svg')
     .attr("viewBox", `-${width / 2} -${height / 2} ${width} ${height}`)
     .style("display", "block")
     .style("margin", "0 -14px")
-    // .style("background", color(0))
-    .style("cursor", "pointer")
     .on("click", (event) => zoom(event, root));
 
 const node = svg.append("g")
   .selectAll("circle")
   .data(root.descendants().slice(1))
   .join("circle")
+    .style("cursor", "pointer")
     .attr("fill", d => d.children ? color(d.depth) : "white")
-    .attr("pointer-events", d => !d.children ? "none" : null)
+    .attr("pointer-events", d => d.parent === root ? null : "none")
     .on("mouseover", function() { d3.select(this).attr("stroke", "#000"); })
     .on("mouseout", function() { d3.select(this).attr("stroke", null); })
-    .on("click", (event, d) => focus !== d && (zoom(event, d), event.stopPropagation()));
+    .on("click", (event, d) => {
+      if (d.children) focus !== d && (zoom(event, d), event.stopPropagation());
+      else window.location = d.data.url;
+    });
 
 const label = svg.append("g")
     .style("font", "10px sans-serif")
     .attr("pointer-events", "none")
     .attr("text-anchor", "middle")
+    .attr("dominant-baseline", "middle")
   .selectAll("text")
   .data(root.descendants())
   .join("text")
@@ -100,11 +101,17 @@ function zoom(event, d) {
   focus = d;
 
   const transition = svg.transition()
-      .duration(event.altKey ? 7500 : 750)
+      .duration(750)
       .tween("zoom", d => {
-        const i = d3.interpolateZoom(view, [focus.x, focus.y, focus.r * 2]);
+        // +5 to ensure that circle is not cut off by svg boundaries
+        const i = d3.interpolateZoom(view, [focus.x, focus.y, focus.r * 2 + 5]);
         return t => zoomTo(i(t));
       });
+
+  node.attr("pointer-events", "none")
+
+  node.filter(d => d.parent === focus)
+    .attr("pointer-events", null)
 
   label.filter(function(d) { return d.parent === focus || this.style.display === "inline"; })
     .transition(transition)
