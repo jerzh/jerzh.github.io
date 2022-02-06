@@ -76,17 +76,18 @@ const node = svg.append("g")
       else window.location = d.data.url;
     });
 
+// Using foreignObject for text wrapping
 const label = svg.append("g")
-    .style("font", "10px sans-serif")
-    .attr("pointer-events", "none")
-    .attr("text-anchor", "middle")
-    // This is how you vertically align text on given coordinates
-    .attr("dominant-baseline", "middle")
-  .selectAll("text")
+  .selectAll("foreignObject")
   .data(root.descendants())
-  .join("text")
-    .style("fill-opacity", d => d.parent === root ? 1 : 0)
-    .style("display", d => d.parent === root ? "inline" : "none")
+  .join("foreignObject")
+    .attr("x", d => d.x - d.r - 250)
+    .attr("y", d => d.y - d.r - 250)
+    .attr("width", d => d.r * 2)
+    .attr("height", d => d.r * 2)
+  .append("xhtml:div")
+    // .attr("margin", "auto")
+    .attr("text-align", "center")
     .text(d => d.data.name);
 
 zoomTo([root.x, root.y, root.r * 2]);
