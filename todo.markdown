@@ -1,6 +1,5 @@
 Blog post ideas:
 * Economics in general
-* Flow networks
 * Pandas
 * D3
 * Activity log (data analysis)
@@ -10,7 +9,7 @@ Blog post ideas:
 * Snare drumming + stick tricks
 * Cooking
 * Toki Pona
-* Algebraic geometry by examples
+* Barbershop, music theory, jazz chords
 
 Development ideas:
 * Custom theme
