@@ -29,7 +29,7 @@
   {%- endif -%}
   {%- for script_name in include.js -%}
     {%- capture url -%}
-      /assets/{{ script_name }}.js
+      /js/{{ script_name }}.js
     {%- endcapture -%}
     <script defer src="{{ url | relative_url }}"></script>
   {%- endfor -%}
