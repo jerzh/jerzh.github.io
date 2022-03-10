@@ -1,7 +1,7 @@
 ---
 ---
 
-#index-game {
+.section {
   margin-top: 100px;
 }
 
@@ -13,6 +13,17 @@
 
 .text-center {
   text-align: center;
+}
+
+.vertical-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.description {
+  width: 50%;
+  margin: 20px;
 }
 
 input {

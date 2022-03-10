@@ -1,114 +1,90 @@
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-function handleSearchResponse(response) {
+async function handleSearchResponse(response) {
   if (!response.ok) {
     throw new Error(response.error);
   }
-  return response.json();
-}
 
-var Game = function (_React$Component) {
-  _inherits(Game, _React$Component);
+  return await response.json();
+} // Bug: Typing 'as' at the right speed may lead to an Abyssinian cat being
+// displayed alongside a description of the Asian Semi-longhair.
 
-  function Game(props) {
-    _classCallCheck(this, Game);
 
-    var _this = _possibleConstructorReturn(this, (Game.__proto__ || Object.getPrototypeOf(Game)).call(this, props));
-
-    _this.state = {
-      value: '',
-      info: null
+class CatAPI extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      query: '',
+      breedData: null,
+      imageUrl: null
     };
-    return _this;
-  }
-
-  // https://oeis.org/search?q=id:A${event.target.value}&fmt=json
+  } // https://oeis.org/search?q=id:A${event.target.value}&fmt=json
   // Original idea was OEIS, but site does not support CORS
 
 
-  _createClass(Game, [{
-    key: 'handleChange',
-    value: function handleChange(event) {
-      var _this2 = this;
+  async handleChange(event) {
+    this.setState({
+      query: event.target.value
+    });
+    const breedData = await this.fetchCatSearch(event.target.value).catch(e => null);
+    if (!breedData) return; // If not found, keep last result
 
+    this.setState({
+      breedData: breedData
+    });
+
+    if (!breedData.reference_image_id) {
       this.setState({
-        value: event.target.value
+        imageUrl: null
       });
-
-      fetch('https://api.thecatapi.com/v1/breeds/search?q=' + event.target.value).then(function (response) {
-        return handleSearchResponse(response);
-      }).then(function (data) {
-        if (data.length == 0) {
-          throw new Error('No search results found');
-        }
-        if (!data[0].reference_image_id) {
-          throw new Error('No image found');
-        }
-        return data[0].reference_image_id;
-      }).then(function (id) {
-        return fetch('https://api.thecatapi.com/v1/images/' + id);
-      }).then(function (response) {
-        return handleSearchResponse(response);
-      }).then(function (data) {
-        return _this2.setState({
-          info: data
-        });
-      }).catch(function (error) {
-        // console.log(error);
-      });
+      return;
     }
 
-    // https://stackoverflow.com/questions/41374572/how-to-render-an-array-of-objects-in-react
-    // Bug: Some cat breeds do not have associated reference images
+    const imageUrl = await this.fetchCatImage(breedData.reference_image_id).catch(e => null);
+    this.setState({
+      imageUrl: imageUrl
+    });
+  }
 
-  }, {
-    key: 'render',
-    value: function render() {
-      return React.createElement(
-        'div',
-        null,
-        React.createElement(
-          'h1',
-          null,
-          ' The Cat API '
-        ),
-        React.createElement(
-          'form',
-          null,
-          React.createElement(
-            'label',
-            null,
-            'Enter query (e.g. Siamese):',
-            React.createElement('input', { type: 'text', value: this.state.value, onChange: this.handleChange.bind(this) })
-          )
-        ),
-        this.state.info && this.state.info.breeds && React.createElement(
-          'div',
-          { className: 'center' },
-          React.createElement(
-            'div',
-            { className: 'text-center' },
-            React.createElement(
-              'div',
-              null,
-              ' ',
-              this.state.info.breeds[0].name,
-              ' '
-            ),
-            React.createElement('img', { height: '200px', src: this.state.info.url })
-          )
-        )
-      );
+  async fetchCatSearch(query) {
+    const response = await fetch(`https://api.thecatapi.com/v1/breeds/search?q=${query}`);
+    const data = await handleSearchResponse(response);
+
+    if (data.length == 0) {
+      throw new Error('No search results found');
     }
-  }]);
 
-  return Game;
-}(React.Component);
+    return data[0];
+  }
 
-ReactDOM.render(React.createElement(Game, null), document.getElementById('index-game'));
+  async fetchCatImage(id) {
+    const response = await fetch(`https://api.thecatapi.com/v1/images/${id}`);
+    const data = await handleSearchResponse(response);
+    return data.url;
+  } // https://stackoverflow.com/questions/41374572/how-to-render-an-array-of-objects-in-react
+
+
+  render() {
+    return /*#__PURE__*/React.createElement("div", {
+      className: "section"
+    }, /*#__PURE__*/React.createElement("h1", null, " The Cat API "), /*#__PURE__*/React.createElement("form", null, /*#__PURE__*/React.createElement("label", null, "Enter query (e.g. Siamese):", /*#__PURE__*/React.createElement("input", {
+      type: "text",
+      value: this.state.query,
+      onChange: this.handleChange.bind(this)
+    }))), this.state.breedData && /*#__PURE__*/React.createElement("div", {
+      className: "center"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "vertical-center"
+    }, this.state.imageUrl && /*#__PURE__*/React.createElement("img", {
+      height: "200px",
+      src: this.state.imageUrl
+    })), /*#__PURE__*/React.createElement("div", {
+      className: "vertical-center description"
+    }, /*#__PURE__*/React.createElement("p", null, " ", /*#__PURE__*/React.createElement("b", null, " ", this.state.breedData.name, " "), " "), /*#__PURE__*/React.createElement("p", null, " ", this.state.breedData.description, " "))));
+  }
+
+}
+
+function Game() {
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(CatAPI, null));
+}
+
+ReactDOM.render( /*#__PURE__*/React.createElement(Game, null), document.getElementById('index-game'));

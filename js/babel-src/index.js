@@ -1,73 +1,94 @@
-function handleSearchResponse(response) {
+async function handleSearchResponse(response) {
   if (!response.ok) {
-    throw new Error(response.error);
+    throw new Error(response.error)
   }
-  return response.json();
+  return await response.json()
 }
 
-class Game extends React.Component {
+// Bug: Typing 'as' at the right speed may lead to an Abyssinian cat being
+// displayed alongside a description of the Asian Semi-longhair.
+class CatAPI extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
-      value: '',
-      info: null
-    };
+      query: '',
+      breedData: null,
+      imageUrl: null
+    }
   }
 
   // https://oeis.org/search?q=id:A${event.target.value}&fmt=json
   // Original idea was OEIS, but site does not support CORS
-  handleChange(event) {
-    this.setState({
-      value: event.target.value
-    });
+  async handleChange(event) {
+    this.setState({ query: event.target.value })
 
-    fetch(`https://api.thecatapi.com/v1/breeds/search?q=${event.target.value}`)
-      .then(response => handleSearchResponse(response))
-      .then(data => {
-        if (data.length == 0) {
-          throw new Error('No search results found')
-        }
-        if (!data[0].reference_image_id) {
-          throw new Error('No image found')
-        }
-        return data[0].reference_image_id
-      })
-      .then(id => fetch(`https://api.thecatapi.com/v1/images/${id}`))
-      .then(response => handleSearchResponse(response))
-      .then(data => this.setState({
-        info: data
-      }))
-      .catch(function(error) {
-          // console.log(error);
-      });
+    const breedData = await this.fetchCatSearch(event.target.value)
+      .catch(e => null)
+    if (!breedData) return  // If not found, keep last result
+    this.setState({ breedData: breedData })
+
+    if (!breedData.reference_image_id) {
+      this.setState({ imageUrl: null })
+      return
+    }
+    const imageUrl = await this.fetchCatImage(breedData.reference_image_id)
+      .catch(e => null)
+    this.setState({ imageUrl: imageUrl })
+  }
+
+  async fetchCatSearch(query) {
+    const response = await fetch(`https://api.thecatapi.com/v1/breeds/search?q=${query}`)
+    const data = await handleSearchResponse(response)
+    if (data.length == 0) {
+      throw new Error('No search results found')
+    }
+    return data[0]
+  }
+
+  async fetchCatImage(id) {
+    const response = await fetch(`https://api.thecatapi.com/v1/images/${id}`)
+    const data = await handleSearchResponse(response)
+    return data.url
   }
 
   // https://stackoverflow.com/questions/41374572/how-to-render-an-array-of-objects-in-react
-  // Bug: Some cat breeds do not have associated reference images
   render() {
     return (
-      <div>
+      <div className='section'>
         <h1> The Cat API </h1>
         <form>
           <label>
             Enter query (e.g. Siamese):
-            <input type='text' value={this.state.value} onChange={this.handleChange.bind(this)}/>
+            <input type='text' value={this.state.query} onChange={this.handleChange.bind(this)}/>
           </label>
         </form>
-        {this.state.info && this.state.info.breeds &&
+        {this.state.breedData &&
           <div className='center'>
-            <div className='text-center'>
-              <div> {this.state.info.breeds[0].name} </div>
-              <img height='200px' src={this.state.info.url} />
+            <div className='vertical-center'>
+              {this.state.imageUrl &&
+                <img height='200px' src={this.state.imageUrl} />
+              }
+            </div>
+            <div className='vertical-center description'>
+              <p> <b> {this.state.breedData.name} </b> </p>
+              <p> {this.state.breedData.description} </p>
             </div>
           </div>
         }
       </div>
-    );
+    )
   }
+}
+
+function Game() {
+  return (
+    <>
+      <CatAPI />
+    </>
+  )
 }
 
 ReactDOM.render(
   <Game />,
   document.getElementById('index-game')
-);
+)

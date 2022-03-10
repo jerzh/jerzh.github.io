@@ -17,8 +17,9 @@
     "url": "https://github.com/invinciblejackalope/invinciblejackalope.github.io/issues"
   },
   "homepage": "https://github.com/invinciblejackalope/invinciblejackalope.github.io#readme",
-  "dependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-react-app": "^3.1.2"
+  "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.5",
+    "@babel/preset-react": "^7.16.7"
   }
 }
