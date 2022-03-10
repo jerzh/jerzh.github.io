@@ -31,6 +31,6 @@
     {%- capture url -%}
       /js/{{ script_name }}.js
     {%- endcapture -%}
-    <script defer type="module" src="{{ url | relative_url }}"></script>
+    <script defer src="{{ url | relative_url }}"></script>
   {%- endfor -%}
 </head>
