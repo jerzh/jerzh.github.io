@@ -2,7 +2,6 @@ Blog post ideas:
 * Economics in general
 * Pandas
 * D3
-* Activity log (data analysis)
 * Overleaf documents (math)
 * Beatboxing
 * React
@@ -10,6 +9,7 @@ Blog post ideas:
 * Cooking
 * Toki Pona
 * Barbershop, music theory, jazz chords
+* Cybersecurity
 
 Development ideas:
 * Custom theme

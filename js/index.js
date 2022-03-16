@@ -78,7 +78,9 @@ class CatAPI extends React.Component {
       src: this.state.imageUrl
     })), /*#__PURE__*/React.createElement("div", {
       className: "vertical-center description"
-    }, /*#__PURE__*/React.createElement("p", null, " ", /*#__PURE__*/React.createElement("b", null, " ", this.state.breedData.name, " "), " "), /*#__PURE__*/React.createElement("p", null, " ", this.state.breedData.description, " "))));
+    }, /*#__PURE__*/React.createElement("p", null, " ", /*#__PURE__*/React.createElement("a", {
+      href: this.state.breedData.wikipedia_url
+    }, /*#__PURE__*/React.createElement("b", null, " ", this.state.breedData.name, " ")), " "), /*#__PURE__*/React.createElement("p", null, " ", this.state.breedData.description, " "))));
   }
 
 }

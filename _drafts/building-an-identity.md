@@ -1,0 +1,18 @@
+---
+layout: post
+title:  "Building an identity"
+date:   2022-03-14 23:29:00 -0500
+categories: personal
+---
+
+Recently I've been feeling the urge to buy some merch from my favorite musicians, [Jeremy Zucker](https://open.spotify.com/artist/3gIRvgZssIb9aiirIg0nI3?si=-p_nBbylT06A1jI0ODdR-A) and [dodie](https://open.spotify.com/artist/21TinSsF5ytwsfdyz5VSVS?si=EihNGOG0QVO268MHE8LgiA). This was a bit odd for me because I usually only buy things that are strictly functional, not because I'm a lifeless husk but because I feel like I have a better use for that money. I'm also the kind of person who tends to have much stronger emotional connections with abstract things (e.g. conversations I've had with a friend) than with anything concrete, like a postcard or other memorabilia. To remind me of memorable experiences, sometimes I will buy small souvenirs – but usually what I'll do instead is record the experience in my plethora of Google Drive documents and spreadsheets. I'll write another post about them later, since there's at least 8 years full of lists and logs to unpack. (I also want to do a data analysis project at some point since I've been learning so much data science and stats recently, wink wink.)
+
+But back to the urge to buy merch. Possibly what's going on is that I've already exhausted the amount of "musician commitment" that I can express in the abstract/virtual space: I've already listened to their songs a bajillion times, created documents about my favorite songs, transcribed their chord progressions, and watched so many music videos and interviews (and dodie's ridiculous number of vlogs on her second YouTube channel, [doddlevloggle](https://www.youtube.com/user/doddlevloggle/featured)). I should mention here that it's quite rare for me to become this interested in a single musician. In fact, it's only happened twice. More on why I like them so much at the end of the post.
+
+What's the point of expressing commitment though? I think it might not be commitment I'm after exactly, but rather giving these musicians a little concrete piece of my identity. That's why I titled this post "building an identity" (maybe a little reference to [dodie's new album](https://open.spotify.com/album/2oMbQ7W1QddUdasTYrJdzE?si=0DOyM7hCQtu_4psz16rxDQ)?). I want to display to the world that this is the kind of music I like in order to spread these musicians' influence and also hopefully find other people who also appreciate them. Not only that, though – I think there is some hope in me that if I have a poster up on my wall and remind myself every day of what is meaningful to me, I can understand myself better and become more like the person I want to be.
+
+It's interesting that an identity is something that you build not only by yourself, but also through your interactions with other people and with the world. After all, [things don't make sense without context](https://www.math3ma.com/blog/the-yoneda-perspective). I certainly feel like I've built a lot of my identity myself because I tend to spend a lot of time exploring my interests on my own. When I was little, almost everything I knew I learned from books – I still do teach myself a lot, although my classes are beating me to it now.
+
+I think it's something to do with their lyricism and overall sincerity that speaks to me on a level that most musicians don't reach.
+
+<!-- <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/2oMbQ7W1QddUdasTYrJdzE?utm_source=generator&theme=0" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe> -->

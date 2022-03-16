@@ -70,7 +70,9 @@ class CatAPI extends React.Component {
               }
             </div>
             <div className='vertical-center description'>
-              <p> <b> {this.state.breedData.name} </b> </p>
+              <p> <a href={this.state.breedData.wikipedia_url}>
+                <b> {this.state.breedData.name} </b>
+              </a> </p>
               <p> {this.state.breedData.description} </p>
             </div>
           </div>
