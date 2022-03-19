@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "Algebraic geometry through examples"
-date:   2022-02-11 16:39:00 -0500
 categories: math alggeo
 external: katex
 ---
