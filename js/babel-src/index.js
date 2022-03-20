@@ -5,15 +5,43 @@ async function handleSearchResponse(response) {
   return await response.json()
 }
 
-// Bug: Typing 'as' at the right speed may lead to an Abyssinian cat being
-// displayed alongside a description of the Asian Semi-longhair.
+
+function CatImage(props) {
+  const queryClient = ReactQuery.useQueryClient()
+
+  async function fetchCatImage(id) {
+    const response = await fetch(`https://api.thecatapi.com/v1/images/${id}`)
+    return await handleSearchResponse(response)
+  }
+
+  const query = ReactQuery.useQuery(['catImage', props.name],
+    () => fetchCatImage(props.id),
+    { staleTime: Infinity, refetchOnWindowFocus: false })
+
+  if (query.isLoading) {
+    return (
+      <p>Loading image...</p>
+    )
+  }
+
+  if (query.isError) {
+    return (
+      <p>Error: {query.error.message}</p>
+    )
+  }
+
+  return (
+    <img height='200px' src={query.data.url} />
+  )
+}
+
+
 class CatAPI extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       query: '',
-      breedData: null,
-      imageUrl: null
+      breedData: null
     }
   }
 
@@ -26,14 +54,6 @@ class CatAPI extends React.Component {
       .catch(e => null)
     if (!breedData) return  // If not found, keep last result
     this.setState({ breedData: breedData })
-
-    if (!breedData.reference_image_id) {
-      this.setState({ imageUrl: null })
-      return
-    }
-    const imageUrl = await this.fetchCatImage(breedData.reference_image_id)
-      .catch(e => null)
-    this.setState({ imageUrl: imageUrl })
   }
 
   async fetchCatSearch(query) {
@@ -42,53 +62,55 @@ class CatAPI extends React.Component {
     if (data.length == 0) {
       throw new Error('No search results found')
     }
-    return data[0]
-  }
-
-  async fetchCatImage(id) {
-    const response = await fetch(`https://api.thecatapi.com/v1/images/${id}`)
-    const data = await handleSearchResponse(response)
-    return data.url
+    return data.slice(0, 10)
   }
 
   // https://stackoverflow.com/questions/41374572/how-to-render-an-array-of-objects-in-react
   render() {
     return (
       <div className='section'>
-        <h1> The Cat API </h1>
+        <h1> The Cat API (now with React Query!) </h1>
         <form>
           <label>
             Enter query (e.g. Siamese):
             <input type='text' value={this.state.query} onChange={this.handleChange.bind(this)}/>
           </label>
         </form>
-        {this.state.breedData &&
-          <div className='center'>
-            <div className='vertical-center'>
-              {this.state.imageUrl &&
-                <img height='200px' src={this.state.imageUrl} />
-              }
+        {this.state.breedData && this.state.breedData.map(breed => (
+          <div key={breed.name} className='center'>
+            <div className='vertical-center description'>
+              <div className='horizontal-center'>
+                {breed.reference_image_id &&
+                  <CatImage name={breed.name} id={breed.reference_image_id} />
+                || <p> (No image provided) </p>}
+              </div>
             </div>
             <div className='vertical-center description'>
-              <p> <a href={this.state.breedData.wikipedia_url}>
-                <b> {this.state.breedData.name} </b>
+              <p> <a href={breed.wikipedia_url}>
+                <b> {breed.name} </b>
               </a> </p>
-              <p> {this.state.breedData.description} </p>
+              <p> {breed.description || '(No description provided)'} </p>
             </div>
           </div>
-        }
+        ))}
       </div>
     )
   }
 }
 
+
+const queryClient = new ReactQuery.QueryClient()
+
+// Spotify API would be interesting but I have no secure way of storing API keys
+// on GitHub Pages
 function Game() {
   return (
-    <>
+    <ReactQuery.QueryClientProvider client={queryClient}>
       <CatAPI />
-    </>
+    </ReactQuery.QueryClientProvider>
   )
 }
+
 
 ReactDOM.render(
   <Game />,

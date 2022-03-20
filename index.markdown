@@ -1,7 +1,7 @@
 ---
 layout: home
 header: Hello!
-external: react
+external: [react, react-query]
 js: index
 ---
 

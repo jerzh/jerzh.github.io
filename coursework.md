@@ -63,7 +63,7 @@ The impact of colonialism, whether leaders matter, what causes conflict, all thr
 
 **14.13 Psychology and Economics**
 
-What are we but partially naive quasihyperbolic discounters?
+(Self-study) What are we but partially naive quasihyperbolic discounters?
 
 ## Business
 

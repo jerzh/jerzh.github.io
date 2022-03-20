@@ -4,17 +4,41 @@ async function handleSearchResponse(response) {
   }
 
   return await response.json();
-} // Bug: Typing 'as' at the right speed may lead to an Abyssinian cat being
-// displayed alongside a description of the Asian Semi-longhair.
+}
 
+function CatImage(props) {
+  const queryClient = ReactQuery.useQueryClient();
+
+  async function fetchCatImage(id) {
+    const response = await fetch(`https://api.thecatapi.com/v1/images/${id}`);
+    return await handleSearchResponse(response);
+  }
+
+  const query = ReactQuery.useQuery(['catImage', props.name], () => fetchCatImage(props.id), {
+    staleTime: Infinity,
+    refetchOnWindowFocus: false
+  });
+
+  if (query.isLoading) {
+    return /*#__PURE__*/React.createElement("p", null, "Loading image...");
+  }
+
+  if (query.isError) {
+    return /*#__PURE__*/React.createElement("p", null, "Error: ", query.error.message);
+  }
+
+  return /*#__PURE__*/React.createElement("img", {
+    height: "200px",
+    src: query.data.url
+  });
+}
 
 class CatAPI extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       query: '',
-      breedData: null,
-      imageUrl: null
+      breedData: null
     };
   } // https://oeis.org/search?q=id:A${event.target.value}&fmt=json
   // Original idea was OEIS, but site does not support CORS
@@ -30,18 +54,6 @@ class CatAPI extends React.Component {
     this.setState({
       breedData: breedData
     });
-
-    if (!breedData.reference_image_id) {
-      this.setState({
-        imageUrl: null
-      });
-      return;
-    }
-
-    const imageUrl = await this.fetchCatImage(breedData.reference_image_id).catch(e => null);
-    this.setState({
-      imageUrl: imageUrl
-    });
   }
 
   async fetchCatSearch(query) {
@@ -52,41 +64,43 @@ class CatAPI extends React.Component {
       throw new Error('No search results found');
     }
 
-    return data[0];
-  }
-
-  async fetchCatImage(id) {
-    const response = await fetch(`https://api.thecatapi.com/v1/images/${id}`);
-    const data = await handleSearchResponse(response);
-    return data.url;
+    return data.slice(0, 10);
   } // https://stackoverflow.com/questions/41374572/how-to-render-an-array-of-objects-in-react
 
 
   render() {
     return /*#__PURE__*/React.createElement("div", {
       className: "section"
-    }, /*#__PURE__*/React.createElement("h1", null, " The Cat API "), /*#__PURE__*/React.createElement("form", null, /*#__PURE__*/React.createElement("label", null, "Enter query (e.g. Siamese):", /*#__PURE__*/React.createElement("input", {
+    }, /*#__PURE__*/React.createElement("h1", null, " The Cat API (now with React Query!) "), /*#__PURE__*/React.createElement("form", null, /*#__PURE__*/React.createElement("label", null, "Enter query (e.g. Siamese):", /*#__PURE__*/React.createElement("input", {
       type: "text",
       value: this.state.query,
       onChange: this.handleChange.bind(this)
-    }))), this.state.breedData && /*#__PURE__*/React.createElement("div", {
+    }))), this.state.breedData && this.state.breedData.map(breed => /*#__PURE__*/React.createElement("div", {
+      key: breed.name,
       className: "center"
     }, /*#__PURE__*/React.createElement("div", {
-      className: "vertical-center"
-    }, this.state.imageUrl && /*#__PURE__*/React.createElement("img", {
-      height: "200px",
-      src: this.state.imageUrl
-    })), /*#__PURE__*/React.createElement("div", {
+      className: "vertical-center description"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "horizontal-center"
+    }, breed.reference_image_id && /*#__PURE__*/React.createElement(CatImage, {
+      name: breed.name,
+      id: breed.reference_image_id
+    }) || /*#__PURE__*/React.createElement("p", null, " (No image provided) "))), /*#__PURE__*/React.createElement("div", {
       className: "vertical-center description"
     }, /*#__PURE__*/React.createElement("p", null, " ", /*#__PURE__*/React.createElement("a", {
-      href: this.state.breedData.wikipedia_url
-    }, /*#__PURE__*/React.createElement("b", null, " ", this.state.breedData.name, " ")), " "), /*#__PURE__*/React.createElement("p", null, " ", this.state.breedData.description, " "))));
+      href: breed.wikipedia_url
+    }, /*#__PURE__*/React.createElement("b", null, " ", breed.name, " ")), " "), /*#__PURE__*/React.createElement("p", null, " ", breed.description || '(No description provided)', " ")))));
   }
 
 }
 
+const queryClient = new ReactQuery.QueryClient(); // Spotify API would be interesting but I have no secure way of storing API keys
+// on GitHub Pages
+
 function Game() {
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(CatAPI, null));
+  return /*#__PURE__*/React.createElement(ReactQuery.QueryClientProvider, {
+    client: queryClient
+  }, /*#__PURE__*/React.createElement(CatAPI, null));
 }
 
 ReactDOM.render( /*#__PURE__*/React.createElement(Game, null), document.getElementById('index-game'));
