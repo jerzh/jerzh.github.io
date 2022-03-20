@@ -49,8 +49,6 @@ class CatAPI extends React.Component {
       query: event.target.value
     });
     const breedData = await this.fetchCatSearch(event.target.value).catch(e => null);
-    if (!breedData) return; // If not found, keep last result
-
     this.setState({
       breedData: breedData
     });
@@ -59,11 +57,6 @@ class CatAPI extends React.Component {
   async fetchCatSearch(query) {
     const response = await fetch(`https://api.thecatapi.com/v1/breeds/search?q=${query}`);
     const data = await handleSearchResponse(response);
-
-    if (data.length == 0) {
-      throw new Error('No search results found');
-    }
-
     return data.slice(0, 10);
   } // https://stackoverflow.com/questions/41374572/how-to-render-an-array-of-objects-in-react
 
@@ -75,7 +68,7 @@ class CatAPI extends React.Component {
       type: "text",
       value: this.state.query,
       onChange: this.handleChange.bind(this)
-    }))), this.state.breedData && this.state.breedData.map(breed => /*#__PURE__*/React.createElement("div", {
+    }))), this.state.breedData && this.state.breedData.length > 0 && this.state.breedData.map(breed => /*#__PURE__*/React.createElement("div", {
       key: breed.name,
       className: "center"
     }, /*#__PURE__*/React.createElement("div", {
@@ -89,7 +82,9 @@ class CatAPI extends React.Component {
       className: "vertical-center description"
     }, /*#__PURE__*/React.createElement("p", null, " ", /*#__PURE__*/React.createElement("a", {
       href: breed.wikipedia_url
-    }, /*#__PURE__*/React.createElement("b", null, " ", breed.name, " ")), " "), /*#__PURE__*/React.createElement("p", null, " ", breed.description || '(No description provided)', " ")))));
+    }, /*#__PURE__*/React.createElement("b", null, " ", breed.name, " ")), " "), /*#__PURE__*/React.createElement("p", null, " ", breed.description || '(No description provided)', " ")))) || this.state.query !== '' && /*#__PURE__*/React.createElement("div", {
+      className: "horizontal-center full-width"
+    }, /*#__PURE__*/React.createElement("p", null, " (No search results found) ")));
   }
 
 }

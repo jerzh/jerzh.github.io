@@ -52,16 +52,12 @@ class CatAPI extends React.Component {
 
     const breedData = await this.fetchCatSearch(event.target.value)
       .catch(e => null)
-    if (!breedData) return  // If not found, keep last result
     this.setState({ breedData: breedData })
   }
 
   async fetchCatSearch(query) {
     const response = await fetch(`https://api.thecatapi.com/v1/breeds/search?q=${query}`)
     const data = await handleSearchResponse(response)
-    if (data.length == 0) {
-      throw new Error('No search results found')
-    }
     return data.slice(0, 10)
   }
 
@@ -76,7 +72,8 @@ class CatAPI extends React.Component {
             <input type='text' value={this.state.query} onChange={this.handleChange.bind(this)}/>
           </label>
         </form>
-        {this.state.breedData && this.state.breedData.map(breed => (
+        {this.state.breedData && this.state.breedData.length > 0
+          && this.state.breedData.map(breed => (
           <div key={breed.name} className='center'>
             <div className='vertical-center description'>
               <div className='horizontal-center'>
@@ -92,7 +89,11 @@ class CatAPI extends React.Component {
               <p> {breed.description || '(No description provided)'} </p>
             </div>
           </div>
-        ))}
+        )) || this.state.query !== '' &&
+          <div className='horizontal-center full-width'>
+            <p> (No search results found) </p>
+          </div>
+        }
       </div>
     )
   }
