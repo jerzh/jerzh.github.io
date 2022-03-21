@@ -35,6 +35,10 @@ Difficult class with a very Olympiad-like flavor and lots of interesting, deep t
 
 Traditional computer vision, e.g. Sobel filters, all the way up to modern-day CNNs and ResNet/robust ImageNet. Comes with lots of very nice and some very creepy machine-generated images.
 
+**6.046 Design and Analysis of Algorithms**
+
+Median finding, hashing, flow networks, linear optimization, randomized algorithms, amortized analysis, computability, the whole grab bag.
+
 **6.036 Introduction to Machine Learning**
 
 (Self-study) Lots of theory with interesting perspectives such as Markov decision processes.
