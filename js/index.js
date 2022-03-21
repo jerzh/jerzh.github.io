@@ -33,6 +33,8 @@ function CatImage(props) {
   });
 }
 
+const queryClient = new ReactQuery.QueryClient();
+
 class CatAPI extends React.Component {
   constructor(props) {
     super(props);
@@ -62,9 +64,9 @@ class CatAPI extends React.Component {
 
 
   render() {
-    return /*#__PURE__*/React.createElement("div", {
-      className: "section"
-    }, /*#__PURE__*/React.createElement("h1", null, " The Cat API (now with React Query!) "), /*#__PURE__*/React.createElement("form", null, /*#__PURE__*/React.createElement("label", null, "Enter query (e.g. Siamese):", /*#__PURE__*/React.createElement("input", {
+    return /*#__PURE__*/React.createElement(ReactQuery.QueryClientProvider, {
+      client: queryClient
+    }, /*#__PURE__*/React.createElement("form", null, /*#__PURE__*/React.createElement("label", null, "Enter query (e.g. Siamese):", /*#__PURE__*/React.createElement("input", {
       type: "text",
       value: this.state.query,
       onChange: this.handleChange.bind(this)
@@ -87,15 +89,8 @@ class CatAPI extends React.Component {
     }, /*#__PURE__*/React.createElement("p", null, " (No search results found) ")));
   }
 
-}
-
-const queryClient = new ReactQuery.QueryClient(); // Spotify API would be interesting but I have no secure way of storing API keys
+} // Spotify API would be interesting but I have no secure way of storing API keys
 // on GitHub Pages
 
-function Game() {
-  return /*#__PURE__*/React.createElement(ReactQuery.QueryClientProvider, {
-    client: queryClient
-  }, /*#__PURE__*/React.createElement(CatAPI, null));
-}
 
-ReactDOM.render( /*#__PURE__*/React.createElement(Game, null), document.getElementById('index-game'));
+ReactDOM.render( /*#__PURE__*/React.createElement(CatAPI, null), document.getElementById('cat-api'));

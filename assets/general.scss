@@ -2,7 +2,24 @@
 ---
 
 .section {
-  margin-top: 100px;
+  margin-top: 50px;
+}
+
+input[id^='check'] {
+  display: none;
+}
+
+label > h1:hover {
+  opacity: 50%;
+}
+
+.hide {
+  margin-bottom: 50px;
+  display: none;
+}
+
+input[id^='check']:checked ~ .hide {
+  display: block;
 }
 
 .center {

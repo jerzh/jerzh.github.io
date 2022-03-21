@@ -1,5 +1,4 @@
 Blog post ideas:
-* Economics in general
 * Pandas
 * D3
 * Overleaf documents (math)

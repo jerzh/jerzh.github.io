@@ -36,6 +36,8 @@ function CatImage(props) {
 }
 
 
+const queryClient = new ReactQuery.QueryClient()
+
 class CatAPI extends React.Component {
   constructor(props) {
     super(props)
@@ -64,8 +66,7 @@ class CatAPI extends React.Component {
   // https://stackoverflow.com/questions/41374572/how-to-render-an-array-of-objects-in-react
   render() {
     return (
-      <div className='section'>
-        <h1> The Cat API (now with React Query!) </h1>
+      <ReactQuery.QueryClientProvider client={queryClient}>
         <form>
           <label>
             Enter query (e.g. Siamese):
@@ -94,26 +95,15 @@ class CatAPI extends React.Component {
             <p> (No search results found) </p>
           </div>
         }
-      </div>
+      </ReactQuery.QueryClientProvider>
     )
   }
 }
 
 
-const queryClient = new ReactQuery.QueryClient()
-
 // Spotify API would be interesting but I have no secure way of storing API keys
 // on GitHub Pages
-function Game() {
-  return (
-    <ReactQuery.QueryClientProvider client={queryClient}>
-      <CatAPI />
-    </ReactQuery.QueryClientProvider>
-  )
-}
-
-
 ReactDOM.render(
-  <Game />,
-  document.getElementById('index-game')
+  <CatAPI />,
+  document.getElementById('cat-api')
 )
