@@ -14,7 +14,7 @@ for (const post of data0) {
 function addCategory(obj, categories, post) {
   if (categories.length == 0) {
     next = {
-      name: post.short_title ?? post.title,
+      name: post.short_title != '' ? post.short_title : post.title,
       value: post.word_count,
       url: post.url
     };

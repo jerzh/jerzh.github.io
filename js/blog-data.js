@@ -4,6 +4,7 @@
 let data0 = [
   {% for post in site.posts %}{
     "title": "{{ post.title }}",
+    "short_title": "{{ post.short_title }}",
     "categories": [{% for category in post.categories %}"{{ category }}"{% unless forloop.last %}, {% endunless %}{% endfor %}],
     "word_count": countWords("{{ post.content | strip_newlines | escape }}"),
     "url": "{{ post.url }}"

@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Why I got into economics: society and psychology"
+short_title: "Why I got into economics"
 date:   2022-03-21 00:34:00 -0400
 categories: econ
 external: katex
