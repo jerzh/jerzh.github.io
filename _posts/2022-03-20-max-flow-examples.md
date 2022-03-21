@@ -1,6 +1,7 @@
 ---
 layout: post
-title:  "The max-flow problem is completely underrated"
+title:  "The power of max-flow"
+date:   2022-03-20 18:00:00 -0400
 categories: cs algo
 external: katex
 ---
@@ -17,6 +18,9 @@ It's clearly useful in situations where an actual notion of flow exists, such as
 Suppose you work at a rescue shelter and are tasked with matching dogs with potential owners. Each dog has a set of owners that they can be matched with, and each owner has a maximum number of dogs that they can take care of. We want to make as many matches as possible. Oh, this is obviously a max-flow problem, right?
 
 Yes, actually. Consider the dogs and owners as vertices in a flow network. Connect the dogs to the source with capacity $$1$$ and the owners to the sink with their individual dog-owning capacities. Finally, connect the dogs to the owners according to their preferences, and the max flow in this network will be our desired optimal solution.
+
+![example-1](/assets/max-flow/ex1.jpg){:width="50%"}
+{:style="text-align: center;"}
 
 ### 2: Toy blocks
 
@@ -37,6 +41,9 @@ Now that we've introduced min-cut, it's time to get funky. Suppose you're tasked
 At least this time we're starting with something kind of like a flow network. The problem we want to solve is like the min-cut problem, except you need two cuts, whatever that means. No need to fret; we can just create an auxiliary flow network where the one-min-cut problem is equivalent to our desired two-min-cut problem! To do this, we duplicate the flow network into two "layers" and connect the vertices in the top layer to the corresponding ones in the bottom layer. And now we just need to solve the max-flow problem on this auxiliary flow network.
 
 (We do need to ensure that our new connecting edges are not included in a min cut, but we can do this by giving them effectively infinite capacity.)
+
+![example-3](/assets/max-flow/ex3.jpg){:width="50%"}
+{:style="text-align: center;"}
 
 Further reading:
 * [Wikipedia page](https://en.wikipedia.org/wiki/Maximum_flow_problem): see "Applications"
