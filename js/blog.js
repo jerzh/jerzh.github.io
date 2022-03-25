@@ -1,3 +1,7 @@
+// Sources:
+// https://observablehq.com/@d3/zoomable-circle-packing
+// https://github.com/invinciblejackalope/networkvis/blob/master/blogger/static/blogger/index.js
+
 const width = 500;
 const height = width;
 
@@ -36,7 +40,7 @@ function addCategory(obj, categories, post) {
   addCategory(next.children, categories, post);
 }
 
-// https://observablehq.com/@d3/zoomable-circle-packing
+
 // d3.pack() calculates the location and radius of each circle
 const root = d3.pack()
     .size([width, height])
@@ -125,3 +129,20 @@ function zoom(event, d) {
       .on("start", function(d) { if (d.parent === focus) this.style.display = "inline"; })
       .on("end", function(d) { if (d.parent !== focus) this.style.display = "none"; });
 }
+
+
+// d3.forceSimulation() animates the circles with "forces"
+var simulation = d3.forceSimulation()
+    .nodes(root.descendants().slice(1))
+    .force('center_force', d3.forceCenter())
+    .force('gravity_force', d3.forceManyBody().strength(1))
+    .force('collide_force', d => d3.forceCollide(d.r))
+
+// function to update the locations of the nodes after every tick
+function tickActions() {
+  node.attr('transform', function(d) { return 'translate(' + d.x + ',' + d.y + ')'; });
+  label.attr('transform', function(d) { return 'translate(' + d.x + ',' + d.y + ')'; });
+}
+
+// add above function to simulation
+simulation.on('tick', tickActions)
