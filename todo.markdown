@@ -1,5 +1,5 @@
 Blog post ideas:
-* Pandas
+* Pandas/SciKit-Learn
 * D3
 * Overleaf documents (math)
 * Beatboxing
