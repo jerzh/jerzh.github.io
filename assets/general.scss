@@ -1,8 +1,28 @@
 ---
 ---
 
+@keyframes slidein {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 100;
+  }
+}
+
+.content {
+
+}
+
 .section {
   margin-top: 50px;
+}
+
+.miniproject {
+
 }
 
 input[id^='check'] {
@@ -28,8 +48,23 @@ input[id^='check']:checked ~ .hide {
   justify-content: center;
 }
 
-.text-center {
+.post-title, .post-meta, .text-center {
   text-align: center;
+}
+
+.post-title {
+  transition: 1s;
+}
+
+.post-title:hover {
+  color: green;
+  font-size: 3.5em;
+  transition: 1s;
+}
+
+.slidein {
+  animation-duration: 3s;
+  animation-name: slidein;
 }
 
 .vertical-center {
