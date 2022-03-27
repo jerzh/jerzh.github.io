@@ -1,11 +1,11 @@
 ---
 layout: home
 header: Hello!
-external: [react, react-query]
-js: index
+external: [react, react-query, mathjs]
+js: [cat-api, domain-color]
 ---
 
-* My name is [Jeremy Zhou](/assets/Resume.pdf).
+* My name is Jeremy Zhou ([resume](/assets/Resume.pdf)).
 * I am an undergraduate student at MIT planning to graduate in 2024, or with a Master's in 2025.
 * I am a highly analytical person with a determination to find efficient, far-reaching solutions to the world's scientific and societal challenges.
 * I plan to graduate with a dual major in courses 18 (Mathematics) and 6-3 (Computer Science and Engineering) and a minor in course 14 (Economics).

@@ -5,32 +5,36 @@ layout: default
 <div class="home">
 
   {%- if page.header -%}
-    <h1 class="post-title slidein">{{ page.header | escape }}</h1>
+    <h1 class="post-title">{{ page.header | escape }}</h1>
   {%- endif -%}
 
   <div class="content">
     {{ content }}
   </div>
 
-  <hr class="section"></hr>
+  <hr class="divider"></hr>
 
-  <div class="section">
+  <div>
     <p> Click on any of the following headers to see their corresponding mini-projects. </p>
-  </div>
 
-  <div class="miniproject">
-    <input type="checkbox" id="check-cat-api" />
-    <label for="check-cat-api"> <h1> The Cat API (now with React Query!) </h1> </label>
-    <div id="cat-api" class="hide"> </div>
-  </div>
-
-  <!-- <div class="miniproject">
-    <input type="checkbox" id="check-music" />
-    <label for="check-music"> <h1> My favorite music, currently </h1> </label>
-
-    <div class="hide">
-      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6NgWnMlF2DZ7NEJBYoe2bt?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    <div class="miniproject">
+      <input type="checkbox" id="check-cat-api" />
+      <label for="check-cat-api"> <h1> The Cat API (react, react-query) </h1> </label>
+      <div id="cat-api" class="hide"> </div>
     </div>
-  </div> -->
 
+    <div class="miniproject">
+      <input type="checkbox" id="check-domain-color" />
+      <label for="check-domain-color"> <h1> Domain coloring (react, canvas, math.js) </h1> </label>
+      <div id="domain-color" class="hide"> </div>
+    </div>
+
+    <!-- <div class="miniproject">
+      <input type="checkbox" id="check-music" />
+      <label for="check-music"> <h1> My favorite music, currently </h1> </label>
+      <div class="hide">
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6NgWnMlF2DZ7NEJBYoe2bt?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+      </div>
+    </div> -->
+  </div>
 </div>

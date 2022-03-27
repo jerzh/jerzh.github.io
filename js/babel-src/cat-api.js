@@ -36,6 +36,30 @@ function CatImage(props) {
 }
 
 
+function CatAPIRow(props) {
+  const breed = props.breed
+  return (
+    <div className='center'>
+      <div className='vertical-center description'>
+        <div className='horizontal-center'>
+          {breed.reference_image_id &&
+            <CatImage name={breed.name} id={breed.reference_image_id} />
+          ||
+            <p> (No image provided) </p>
+          }
+        </div>
+      </div>
+      <div className='vertical-center description'>
+        <p> <a href={breed.wikipedia_url}>
+          <b> {breed.name} </b>
+        </a> </p>
+        <p> {breed.description || '(No description provided)'} </p>
+      </div>
+    </div>
+  )
+}
+
+
 const queryClient = new ReactQuery.QueryClient()
 
 class CatAPI extends React.Component {
@@ -73,24 +97,11 @@ class CatAPI extends React.Component {
             <input type='text' value={this.state.query} onChange={this.handleChange.bind(this)}/>
           </label>
         </form>
-        {this.state.breedData && this.state.breedData.length > 0
-          && this.state.breedData.map(breed => (
-          <div key={breed.name} className='center'>
-            <div className='vertical-center description'>
-              <div className='horizontal-center'>
-                {breed.reference_image_id &&
-                  <CatImage name={breed.name} id={breed.reference_image_id} />
-                || <p> (No image provided) </p>}
-              </div>
-            </div>
-            <div className='vertical-center description'>
-              <p> <a href={breed.wikipedia_url}>
-                <b> {breed.name} </b>
-              </a> </p>
-              <p> {breed.description || '(No description provided)'} </p>
-            </div>
-          </div>
-        )) || this.state.query !== '' &&
+        {this.state.breedData && this.state.breedData.length > 0 &&
+          this.state.breedData.map(breed =>
+            <CatAPIRow key={breed.name} breed={breed} />
+          )
+        || this.state.query !== '' &&
           <div className='horizontal-center full-width'>
             <p> (No search results found) </p>
           </div>
@@ -101,8 +112,6 @@ class CatAPI extends React.Component {
 }
 
 
-// Spotify API would be interesting but I have no secure way of storing API keys
-// on GitHub Pages
 ReactDOM.render(
   <CatAPI />,
   document.getElementById('cat-api')

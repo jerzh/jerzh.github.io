@@ -33,6 +33,24 @@ function CatImage(props) {
   });
 }
 
+function CatAPIRow(props) {
+  const breed = props.breed;
+  return /*#__PURE__*/React.createElement("div", {
+    className: "center"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "vertical-center description"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "horizontal-center"
+  }, breed.reference_image_id && /*#__PURE__*/React.createElement(CatImage, {
+    name: breed.name,
+    id: breed.reference_image_id
+  }) || /*#__PURE__*/React.createElement("p", null, " (No image provided) "))), /*#__PURE__*/React.createElement("div", {
+    className: "vertical-center description"
+  }, /*#__PURE__*/React.createElement("p", null, " ", /*#__PURE__*/React.createElement("a", {
+    href: breed.wikipedia_url
+  }, /*#__PURE__*/React.createElement("b", null, " ", breed.name, " ")), " "), /*#__PURE__*/React.createElement("p", null, " ", breed.description || '(No description provided)', " ")));
+}
+
 const queryClient = new ReactQuery.QueryClient();
 
 class CatAPI extends React.Component {
@@ -70,27 +88,14 @@ class CatAPI extends React.Component {
       type: "text",
       value: this.state.query,
       onChange: this.handleChange.bind(this)
-    }))), this.state.breedData && this.state.breedData.length > 0 && this.state.breedData.map(breed => /*#__PURE__*/React.createElement("div", {
+    }))), this.state.breedData && this.state.breedData.length > 0 && this.state.breedData.map(breed => /*#__PURE__*/React.createElement(CatAPIRow, {
       key: breed.name,
-      className: "center"
-    }, /*#__PURE__*/React.createElement("div", {
-      className: "vertical-center description"
-    }, /*#__PURE__*/React.createElement("div", {
-      className: "horizontal-center"
-    }, breed.reference_image_id && /*#__PURE__*/React.createElement(CatImage, {
-      name: breed.name,
-      id: breed.reference_image_id
-    }) || /*#__PURE__*/React.createElement("p", null, " (No image provided) "))), /*#__PURE__*/React.createElement("div", {
-      className: "vertical-center description"
-    }, /*#__PURE__*/React.createElement("p", null, " ", /*#__PURE__*/React.createElement("a", {
-      href: breed.wikipedia_url
-    }, /*#__PURE__*/React.createElement("b", null, " ", breed.name, " ")), " "), /*#__PURE__*/React.createElement("p", null, " ", breed.description || '(No description provided)', " ")))) || this.state.query !== '' && /*#__PURE__*/React.createElement("div", {
+      breed: breed
+    })) || this.state.query !== '' && /*#__PURE__*/React.createElement("div", {
       className: "horizontal-center full-width"
     }, /*#__PURE__*/React.createElement("p", null, " (No search results found) ")));
   }
 
-} // Spotify API would be interesting but I have no secure way of storing API keys
-// on GitHub Pages
-
+}
 
 ReactDOM.render( /*#__PURE__*/React.createElement(CatAPI, null), document.getElementById('cat-api'));
