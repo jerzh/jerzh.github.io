@@ -13,12 +13,14 @@ function sigmoid(x) {
 function GraphCanvas(props) {
   const canvasRef = React.useRef(null)
   const f = math.compile(props.exp)
+  const pixels = 100
+  const scale = pixels / props.range
 
   function draw(ctx) {
     let imageData = ctx.createImageData(ctx.canvas.width, ctx.canvas.height)
     for (let i = 0; i < imageData.data.length / 4; i += 1) {
-      const x = (i % imageData.width - imageData.width / 2) / props.scale
-      const y = (imageData.height / 2 - Math.trunc(i / imageData.width)) / props.scale
+      const x = (i % imageData.width - imageData.width / 2) / scale
+      const y = (imageData.height / 2 - Math.trunc(i / imageData.width)) / scale
       const col = props.calcResult(x, y, f)
       imageData.data[4 * i + 0] = 255 * col[0]
       imageData.data[4 * i + 1] = 255 * col[1]
@@ -35,14 +37,15 @@ function GraphCanvas(props) {
   }, [draw])
 
   return (
-    <canvas ref={canvasRef} height='200px' width='200px' />
+    <canvas ref={canvasRef} id='graph-canvas' height={pixels} width={pixels} />
   )
 }
 
 
 function DomainColor(props) {
-  const [exp, setExp] = React.useState('z')
-  const [displayExp, setDisplayExp] = React.useState('z')
+  const [exp, setExp] = React.useState('z^2+c')
+  const [displayExp, setDisplayExp] = React.useState('z^2+c')
+  const [range, setRange] = React.useState(3)
   const [cRe, setCRe] = React.useState(0)
   const [cIm, setCIm] = React.useState(0)
   const [graphType, setGraphType] = React.useState('Domain coloring')
@@ -74,9 +77,9 @@ function DomainColor(props) {
         </label>
       </form>
       <div className='section center horizontal'>
-        <div className='center2 vertical description'>
+        <div className='center2 vertical description fixed-height'>
           {exp && (graphType === 'Domain coloring' &&
-            <GraphCanvas exp={displayExp} scale={10} calcResult={(x, y, f) => {
+            <GraphCanvas exp={displayExp} range={range} calcResult={(x, y, f) => {
               const res = math.complex(f.evaluate({
                 z: math.complex(x, y),
                 c: math.complex(cRe, cIm)
@@ -84,7 +87,7 @@ function DomainColor(props) {
               return hsv2rgb(res.phi / (2 * Math.PI), sigmoid(res.r), 1)
             }} />
           || graphType === 'Julia set' &&
-            <GraphCanvas exp={displayExp} scale={100} calcResult={(x, y, f) => {
+            <GraphCanvas exp={displayExp} range={range} calcResult={(x, y, f) => {
               let z = math.complex(x, y)
               const c = math.complex(cRe, cIm)
               let count = 0
@@ -98,13 +101,13 @@ function DomainColor(props) {
               return count !== maxIter ? hsv2rgb(count / maxIter, 1, 1) : [0, 0, 0]
             }} />
           || graphType === 'Mandelbrot set' &&
-            <GraphCanvas exp={displayExp} scale={100} calcResult={(x, y, f) => {
-              const z = math.complex(x, y)
-              let c = math.complex(cRe, cIm)
+            <GraphCanvas exp={displayExp} range={range} calcResult={(x, y, f) => {
+              let z = math.complex(cRe, cIm)
+              const c = math.complex(x, y)
               let count = 0
-              while (c.toPolar().r < 2 && count < maxIter) {
+              while (z.toPolar().r < 2 && count < maxIter) {
                 count += 1
-                c = math.complex(f.evaluate({
+                z = math.complex(f.evaluate({
                   z: z,
                   c: c
                 }))
@@ -114,8 +117,17 @@ function DomainColor(props) {
           )}
         </div>
         <div className='center vertical spaced description'>
+          <div className='center horizontal'>
+            <label> range: </label>
+            <input type='number' min='0.05' max='10' step='0.05' value={range}
+              onChange={() => setRange(event.target.value)} />
+          </div>
           <div className='center2 vertical'>
-            <label> c = {math.complex(cRe, cIm).toString()} </label>
+            {graphType === 'Mandelbrot set' &&
+              <label> z = {math.complex(cRe, cIm).toString()} </label>
+            ||
+              <label> c = {math.complex(cRe, cIm).toString()} </label>
+            }
             <div className='center horizontal'>
               <input type='number' min='-10' max='10' step='0.05' value={cRe}
                 onChange={() => setCRe(event.target.value)} />
@@ -129,7 +141,11 @@ function DomainColor(props) {
                 <div key={type}>
                   <input type='radio' name='graph-type' value={type}
                     checked={type === graphType}
-                    onChange={() => setGraphType(type)} />
+                    onChange={() => {
+                      setCRe(0)
+                      setCIm(0)
+                      setGraphType(type)
+                    }} />
                   <label> {type} </label>
                 </div>
               ))}

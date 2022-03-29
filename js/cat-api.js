@@ -84,7 +84,7 @@ class CatAPI extends React.Component {
   render() {
     return /*#__PURE__*/React.createElement(ReactQuery.QueryClientProvider, {
       client: queryClient
-    }, /*#__PURE__*/React.createElement("form", null, /*#__PURE__*/React.createElement("label", null, "Enter query (e.g. Siamese):", /*#__PURE__*/React.createElement("input", {
+    }, /*#__PURE__*/React.createElement("form", null, /*#__PURE__*/React.createElement("label", null, "Enter query (e.g. 'american'):", /*#__PURE__*/React.createElement("input", {
       type: "text",
       value: this.state.query,
       onChange: this.handleChange.bind(this)

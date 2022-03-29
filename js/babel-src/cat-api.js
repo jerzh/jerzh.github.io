@@ -93,7 +93,7 @@ class CatAPI extends React.Component {
       <ReactQuery.QueryClientProvider client={queryClient}>
         <form>
           <label>
-            Enter query (e.g. Siamese):
+            Enter query (e.g. 'american'):
             <input type='text' value={this.state.query} onChange={this.handleChange.bind(this)}/>
           </label>
         </form>
