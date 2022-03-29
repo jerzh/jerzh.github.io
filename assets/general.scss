@@ -76,22 +76,31 @@ input[id^='check']:checked ~ .hide {
   transition: 0.5s;
 }
 
-.center {
+.section {
   margin: 10px 0;
+}
+
+.center {
   display: flex;
   justify-content: center;
 }
 
-.vertical-center {
+.center2 {
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spaced {
+  justify-content: space-around;
+}
+
+.vertical {
   flex-direction: column;
-  justify-content: center;
 }
 
-.horizontal-center {
-  display: flex;
+.horizontal {
   flex-direction: row;
-  justify-content: center;
 }
 
 .text-center {

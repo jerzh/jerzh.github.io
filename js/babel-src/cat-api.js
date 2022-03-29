@@ -39,9 +39,9 @@ function CatImage(props) {
 function CatAPIRow(props) {
   const breed = props.breed
   return (
-    <div className='center'>
-      <div className='vertical-center description'>
-        <div className='horizontal-center'>
+    <div className='section center horizontal'>
+      <div className='center vertical description'>
+        <div className='center horizontal'>
           {breed.reference_image_id &&
             <CatImage name={breed.name} id={breed.reference_image_id} />
           ||
@@ -49,7 +49,7 @@ function CatAPIRow(props) {
           }
         </div>
       </div>
-      <div className='vertical-center description'>
+      <div className='center vertical description'>
         <p> <a href={breed.wikipedia_url}>
           <b> {breed.name} </b>
         </a> </p>
@@ -102,7 +102,7 @@ class CatAPI extends React.Component {
             <CatAPIRow key={breed.name} breed={breed} />
           )
         || this.state.query !== '' &&
-          <div className='horizontal-center full-width'>
+          <div className='center horizontal full-width'>
             <p> (No search results found) </p>
           </div>
         }

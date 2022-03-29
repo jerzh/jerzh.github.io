@@ -12,20 +12,14 @@ function sigmoid(x) {
 
 function GraphCanvas(props) {
   const canvasRef = React.useRef(null)
-  const scale = 10
-  const f = math.compile(props.exp);
-
-  function calcResult(x, y) {
-    const res = math.complex(f.evaluate({z: math.complex(x, y)})).toPolar()
-    return hsv2rgb(res.phi / (2 * Math.PI), sigmoid(res.r / scale), 1)
-  }
+  const f = math.compile(props.exp)
 
   function draw(ctx) {
     let imageData = ctx.createImageData(ctx.canvas.width, ctx.canvas.height)
     for (let i = 0; i < imageData.data.length / 4; i += 1) {
-      const x = (i % imageData.width - imageData.width / 2) / scale
-      const y = (imageData.height / 2 - Math.trunc(i / imageData.width)) / scale
-      const col = calcResult(x, y)
+      const x = (i % imageData.width - imageData.width / 2) / props.scale
+      const y = (imageData.height / 2 - Math.trunc(i / imageData.width)) / props.scale
+      const col = props.calcResult(x, y, f)
       imageData.data[4 * i + 0] = 255 * col[0]
       imageData.data[4 * i + 1] = 255 * col[1]
       imageData.data[4 * i + 2] = 255 * col[2]
@@ -49,6 +43,12 @@ function GraphCanvas(props) {
 function DomainColor(props) {
   const [exp, setExp] = React.useState('z')
   const [displayExp, setDisplayExp] = React.useState('z')
+  const [cRe, setCRe] = React.useState(0)
+  const [cIm, setCIm] = React.useState(0)
+  const [graphType, setGraphType] = React.useState('Domain coloring')
+
+  const graphTypes = ['Domain coloring', 'Julia set', 'Mandelbrot set']
+  const maxIter = 20
 
   return (
     <>
@@ -57,12 +57,15 @@ function DomainColor(props) {
       </p>
       <form>
         <label>
-          Enter expression in terms of z:
+          Enter expression in terms of z and c:
           <input type='text' value={exp} onChange={() => {
             setExp(event.target.value)
             try {
               f = math.compile(event.target.value)
-              math.complex(f.evaluate({z: math.complex(1, 1)}))
+              math.complex(f.evaluate({
+                z: math.complex(1, 1),
+                c: math.complex(cRe, cIm)
+              }))
               setDisplayExp(event.target.value)
             } catch (e) {
               // console.log(e)
@@ -70,12 +73,67 @@ function DomainColor(props) {
           }} />
         </label>
       </form>
-      <div className='center'>
-        <div className='vertical-center description'>
-          <div className='horizontal-center'>
-            {exp &&
-              <GraphCanvas exp={displayExp} />
-            }
+      <div className='section center horizontal'>
+        <div className='center2 vertical description'>
+          {exp && (graphType === 'Domain coloring' &&
+            <GraphCanvas exp={displayExp} scale={10} calcResult={(x, y, f) => {
+              const res = math.complex(f.evaluate({
+                z: math.complex(x, y),
+                c: math.complex(cRe, cIm)
+              })).toPolar()
+              return hsv2rgb(res.phi / (2 * Math.PI), sigmoid(res.r), 1)
+            }} />
+          || graphType === 'Julia set' &&
+            <GraphCanvas exp={displayExp} scale={100} calcResult={(x, y, f) => {
+              let z = math.complex(x, y)
+              const c = math.complex(cRe, cIm)
+              let count = 0
+              while (z.toPolar().r < 2 && count < maxIter) {
+                count += 1
+                z = math.complex(f.evaluate({
+                  z: z,
+                  c: c
+                }))
+              }
+              return count !== maxIter ? hsv2rgb(count / maxIter, 1, 1) : [0, 0, 0]
+            }} />
+          || graphType === 'Mandelbrot set' &&
+            <GraphCanvas exp={displayExp} scale={100} calcResult={(x, y, f) => {
+              const z = math.complex(x, y)
+              let c = math.complex(cRe, cIm)
+              let count = 0
+              while (c.toPolar().r < 2 && count < maxIter) {
+                count += 1
+                c = math.complex(f.evaluate({
+                  z: z,
+                  c: c
+                }))
+              }
+              return count !== maxIter ? hsv2rgb(count / maxIter, 1, 1) : [0, 0, 0]
+            }} />
+          )}
+        </div>
+        <div className='center vertical spaced description'>
+          <div className='center2 vertical'>
+            <label> c = {math.complex(cRe, cIm).toString()} </label>
+            <div className='center horizontal'>
+              <input type='number' min='-10' max='10' step='0.05' value={cRe}
+                onChange={() => setCRe(event.target.value)} />
+              <input type='number' min='-10' max='10' step='0.05' value={cIm}
+                onChange={() => setCIm(event.target.value)} />
+            </div>
+          </div>
+          <div className='center horizontal'>
+            <div className='center vertical'>
+              {graphTypes.map(type => (
+                <div key={type}>
+                  <input type='radio' name='graph-type' value={type}
+                    checked={type === graphType}
+                    onChange={() => setGraphType(type)} />
+                  <label> {type} </label>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

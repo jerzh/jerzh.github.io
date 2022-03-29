@@ -36,16 +36,16 @@ function CatImage(props) {
 function CatAPIRow(props) {
   const breed = props.breed;
   return /*#__PURE__*/React.createElement("div", {
-    className: "center"
+    className: "section center horizontal"
   }, /*#__PURE__*/React.createElement("div", {
-    className: "vertical-center description"
+    className: "center vertical description"
   }, /*#__PURE__*/React.createElement("div", {
-    className: "horizontal-center"
+    className: "center horizontal"
   }, breed.reference_image_id && /*#__PURE__*/React.createElement(CatImage, {
     name: breed.name,
     id: breed.reference_image_id
   }) || /*#__PURE__*/React.createElement("p", null, " (No image provided) "))), /*#__PURE__*/React.createElement("div", {
-    className: "vertical-center description"
+    className: "center vertical description"
   }, /*#__PURE__*/React.createElement("p", null, " ", /*#__PURE__*/React.createElement("a", {
     href: breed.wikipedia_url
   }, /*#__PURE__*/React.createElement("b", null, " ", breed.name, " ")), " "), /*#__PURE__*/React.createElement("p", null, " ", breed.description || '(No description provided)', " ")));
@@ -92,7 +92,7 @@ class CatAPI extends React.Component {
       key: breed.name,
       breed: breed
     })) || this.state.query !== '' && /*#__PURE__*/React.createElement("div", {
-      className: "horizontal-center full-width"
+      className: "center horizontal full-width"
     }, /*#__PURE__*/React.createElement("p", null, " (No search results found) ")));
   }
 
