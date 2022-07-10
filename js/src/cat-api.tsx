@@ -1,3 +1,5 @@
+declare var ReactQuery: any
+
 async function handleSearchResponse(response) {
   if (!response.ok) {
     throw new Error(response.error)
@@ -6,10 +8,10 @@ async function handleSearchResponse(response) {
 }
 
 
-function CatImage(props) {
-  const queryClient = ReactQuery.useQueryClient()
+function CatImage(props: { name: string, id: string }) {
+  // const queryClient = ReactQuery.useQueryClient()
 
-  async function fetchCatImage(id) {
+  async function fetchCatImage(id: string) {
     const response = await fetch(`https://api.thecatapi.com/v1/images/${id}`)
     return await handleSearchResponse(response)
   }
@@ -36,7 +38,7 @@ function CatImage(props) {
 }
 
 
-function CatAPIRow(props) {
+function CatAPIRow(props: {breed: CatBreed}) {
   const breed = props.breed
   return (
     <div className='section center horizontal'>
@@ -62,8 +64,20 @@ function CatAPIRow(props) {
 
 const queryClient = new ReactQuery.QueryClient()
 
-class CatAPI extends React.Component {
-  constructor(props) {
+interface CatBreed {
+  name: string,
+  reference_image_id: string,
+  wikipedia_url: string,
+  description: string
+}
+
+interface CatState {
+  query: string;
+  breedData: CatBreed[]
+}
+
+class CatAPI extends React.Component<{}, CatState> {
+  constructor(props: {}) {
     super(props)
     this.state = {
       query: '',
@@ -73,15 +87,15 @@ class CatAPI extends React.Component {
 
   // https://oeis.org/search?q=id:A${event.target.value}&fmt=json
   // Original idea was OEIS, but site does not support CORS
-  async handleChange(event) {
+  async handleChange(event: { target: { value: string } }) {
     this.setState({ query: event.target.value })
 
     const breedData = await this.fetchCatSearch(event.target.value)
-      .catch(e => null)
+      .catch()
     this.setState({ breedData: breedData })
   }
 
-  async fetchCatSearch(query) {
+  async fetchCatSearch(query: string) {
     const response = await fetch(`https://api.thecatapi.com/v1/breeds/search?q=${query}`)
     const data = await handleSearchResponse(response)
     return data.slice(0, 10)

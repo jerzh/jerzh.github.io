@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "rootDir": "js/src",
+    "outDir": "js",
+    "lib": ["ES2016", "DOM"],
+    "jsx": "react"
+  },
+  "include": ["js/src"],
+  "exclude": []
+}
