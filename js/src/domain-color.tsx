@@ -1,3 +1,4 @@
+// Same story as react-query (see cat-api)
 declare var math: any
 
 // https://stackoverflow.com/questions/17242144/javascript-convert-hsb-hsv-color-to-rgb-accurately
@@ -12,6 +13,7 @@ function sigmoid(x: number) {
 }
 
 
+// Draws on JS canvas pixel by pixel using given calcResult function
 function GraphCanvas(props: { exp: string, range: number, center: number[], calcResult: Function }) {
   const canvasRef = React.useRef(null)
   const f = math.compile(props.exp)
@@ -44,7 +46,12 @@ function GraphCanvas(props: { exp: string, range: number, center: number[], calc
 }
 
 
+// Big component for entire DomainColor mini-project
+// Should definitely split this into multiple components
 function DomainColor(props: {}) {
+  // Lol this is kinda messy, maybe move to Fresh or something
+  // Actually how about I put everything in an object so I'm not passing
+  // around a bajillion variables and I can actually split up the components
   const [exp, setExp] = React.useState('z^2+c')
   const [displayExp, setDisplayExp] = React.useState('z^2+c')
   const [range, setRange] = React.useState(3)
@@ -60,7 +67,7 @@ function DomainColor(props: {}) {
   return (
     <>
       <p>
-        <a href='https://github.com/invinciblejackalope/IdeaProjects/blob/master/untitled/src/TransformationAnimation.java'>My domain coloring app</a> was one of the first big projects I made back when I first learned how to code in Java. This is a tribute to that project.
+        <a href='https://github.com/jerzh/IdeaProjects/blob/master/untitled/src/TransformationAnimation.java'>My domain coloring app</a> was one of the first big projects I made back when I first learned how to code in Java. This is a tribute to that project.
       </p>
       <form>
         <label>
@@ -83,6 +90,8 @@ function DomainColor(props: {}) {
       </form>
       <div className='section center horizontal'>
         <div className='center2 vertical description fixed-height'>
+          {/* Draw GraphCanvas with the relevant calcResult function
+          There is most definitely a better way */}
           {exp && (graphType === 'Domain coloring' &&
             <GraphCanvas exp={displayExp} range={range} center={[centerX, centerY]}
               calcResult={(x: number, y: number, f) => {
@@ -124,6 +133,7 @@ function DomainColor(props: {}) {
             }} />
           )}
         </div>
+        {/* All the inputs */}
         <div className='center vertical spaced description'>
           <div className='center horizontal'>
             <label> range: </label>

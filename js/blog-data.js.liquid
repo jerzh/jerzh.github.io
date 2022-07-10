@@ -1,6 +1,12 @@
 ---
 ---
 
+// To my understanding, the TypeScript VSCode intellisense doesn't currently
+// understand Liquid, so it would be sorta difficult to get good type
+// definitions for e.g. data0 (though it's def possible to hack something
+// together)
+
+// Read page data via Jekyll and pass to blog.js
 let data0 = [
   {% for post in site.posts %}{
     "title": "{{ post.title }}",

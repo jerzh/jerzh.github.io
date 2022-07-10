@@ -1,5 +1,9 @@
+// I don't have the react-query type definitions because I'm currently importing
+// react-query via CDN, which I should eventually stop doing (use webpack or
+// something similar)
 declare var ReactQuery: any
 
+// Unwrap response
 async function handleSearchResponse(response) {
   if (!response.ok) {
     throw new Error(response.error)
@@ -8,6 +12,7 @@ async function handleSearchResponse(response) {
 }
 
 
+// Component for a single cat image
 function CatImage(props: { name: string, id: string }) {
   // const queryClient = ReactQuery.useQueryClient()
 
@@ -38,6 +43,7 @@ function CatImage(props: { name: string, id: string }) {
 }
 
 
+// One row of search results (image + desc)
 function CatAPIRow(props: {breed: CatBreed}) {
   const breed = props.breed
   return (
@@ -64,6 +70,8 @@ function CatAPIRow(props: {breed: CatBreed}) {
 
 const queryClient = new ReactQuery.QueryClient()
 
+// Hooray for TypeScript! Interfaces are good and type definitions
+// are also good
 interface CatBreed {
   name: string,
   reference_image_id: string,
@@ -76,6 +84,8 @@ interface CatState {
   breedData: CatBreed[]
 }
 
+// Big component for the entire CatAPI mini-project
+// Template goes like React.Component<props, state>
 class CatAPI extends React.Component<{}, CatState> {
   constructor(props: {}) {
     super(props)
@@ -87,6 +97,9 @@ class CatAPI extends React.Component<{}, CatState> {
 
   // https://oeis.org/search?q=id:A${event.target.value}&fmt=json
   // Original idea was OEIS, but site does not support CORS
+  // This was fun to debug lol
+
+  // Instant updates! (a deliberate design decision to demonstrate React)
   async handleChange(event: { target: { value: string } }) {
     this.setState({ query: event.target.value })
 
@@ -102,6 +115,7 @@ class CatAPI extends React.Component<{}, CatState> {
   }
 
   // https://stackoverflow.com/questions/41374572/how-to-render-an-array-of-objects-in-react
+  // Functional programming o.o
   render() {
     return (
       <ReactQuery.QueryClientProvider client={queryClient}>
