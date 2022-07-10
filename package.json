@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/invinciblejackalope/invinciblejackalope.github.io.git"
+    "url": "git+https://github.com/jerzh/jerzh.github.io.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/invinciblejackalope/invinciblejackalope.github.io/issues"
+    "url": "https://github.com/jerzh/jerzh.github.io/issues"
   },
-  "homepage": "https://github.com/invinciblejackalope/invinciblejackalope.github.io#readme",
+  "homepage": "https://github.com/jerzh/jerzh.github.io#readme",
   "devDependencies": {
     "@babel/cli": "^7.17.6",
     "@babel/core": "^7.17.5",

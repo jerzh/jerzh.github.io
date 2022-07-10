@@ -1,18 +1,6 @@
 ---
 ---
 
-@keyframes slidein {
-  from {
-    transform: translateY(-30px);
-    opacity: 0;
-  }
-
-  to {
-    transform: translateY(0);
-    opacity: 100;
-  }
-}
-
 input {
   margin: 0 5px;
 }
@@ -29,15 +17,17 @@ label > h1:hover {
   transition: 0.5s;
 }
 
+// Probably a good idea to not change the font size since
+// it can change the wrapping of the text, which is not
+// good design? idk what the relevant design principle is
+// but it's definitely not good design
 .post-title:hover {
   color: green;
-  font-size: 3.5em;
+  // font-size: 3.5em;
   transition: 0.5s;
 }
 
-.content {
-
-}
+// .content
 
 .divider {
   margin: 50px 0;
