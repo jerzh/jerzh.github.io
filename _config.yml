@@ -44,7 +44,7 @@ markdown: kramdown
 # their entries' file path in the `include:` list.
 #
 exclude:
-  - js/src/
+  - src/
 #   - .sass-cache/
 #   - .jekyll-cache/
 #   - gemfiles/

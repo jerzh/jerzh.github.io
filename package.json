@@ -18,13 +18,20 @@
   },
   "homepage": "https://github.com/jerzh/jerzh.github.io#readme",
   "devDependencies": {
-    "@babel/cli": "^7.17.6",
-    "@babel/core": "^7.17.5",
-    "@babel/preset-react": "^7.16.7",
-    "@types/react": "^17.0.43",
-    "@types/react-dom": "^17.0.14"
+    "ts-loader": "^9.3.1",
+    "typescript": "^4.6.3",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0"
   },
   "dependencies": {
-    "typescript": "^4.6.3"
+    "@types/d3": "^7.4.0",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "d3": "^7.6.1",
+    "katex": "^0.16.0",
+    "mathjs": "^10.6.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-query": "^3.39.1"
   }
 }

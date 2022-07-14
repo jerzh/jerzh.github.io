@@ -3,8 +3,8 @@ layout: blog
 title: Blog
 header: jerzhou's blog
 permalink: /blog/
-external: d3
-js: [blog-data, blog]
+# external: d3
+js: [blog]
 ---
 
 Forever a learner!

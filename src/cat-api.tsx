@@ -1,7 +1,6 @@
-// I don't have the react-query type definitions because I'm currently importing
-// react-query via CDN, which I should eventually stop doing (use webpack or
-// something similar)
-declare var ReactQuery: any
+import React = require('react')
+import ReactDOM = require('react-dom')
+import ReactQuery = require('react-query')
 
 // Unwrap response
 async function handleSearchResponse(response) {
@@ -33,7 +32,8 @@ function CatImage(props: { name: string, id: string }) {
 
   if (query.isError) {
     return (
-      <p>Error: {query.error.message}</p>
+      // query.error.message doesn't seem to exist?
+      <p>An error occurred :/</p>
     )
   }
 
@@ -80,7 +80,7 @@ interface CatBreed {
 }
 
 interface CatState {
-  query: string;
+  query: string
   breedData: CatBreed[]
 }
 
@@ -140,6 +140,7 @@ class CatAPI extends React.Component<{}, CatState> {
 }
 
 
+// TODO: Update to React 18
 ReactDOM.render(
   <CatAPI />,
   document.getElementById('cat-api')

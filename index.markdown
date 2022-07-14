@@ -1,7 +1,7 @@
 ---
 layout: home
 header: Hello!
-external: [react, react-query, mathjs]
+# external: [react, react-query, mathjs]
 js: [cat-api, domain-color]
 ---
 

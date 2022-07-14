@@ -1,10 +1,12 @@
 {
   "compilerOptions": {
-    "rootDir": "js/src",
+    "rootDir": "src",
     "outDir": "js",
+    // "noImplicitAny": true,
     "lib": ["ES2016", "DOM"],
-    "jsx": "react"
+    "jsx": "react",
+    "moduleResolution": "node"
   },
-  "include": ["js/src"],
+  "include": ["src"],
   "exclude": []
 }

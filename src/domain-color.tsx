@@ -1,5 +1,6 @@
-// Same story as react-query (see cat-api)
-declare var math: any
+import React = require('react')
+import ReactDOM = require('react-dom')
+import math = require('mathjs')
 
 // https://stackoverflow.com/questions/17242144/javascript-convert-hsb-hsv-color-to-rgb-accurately
 // scale input and output to [0, 1]
@@ -182,6 +183,8 @@ function DomainColor(props: {}) {
   )
 }
 
+
+// TODO: Update to React 18
 ReactDOM.render(
   <DomainColor />,
   document.getElementById('domain-color')
