@@ -1,16 +1,11 @@
 Blog post ideas:
-* Pandas/SciKit-Learn
-* D3
 * Overleaf documents (math)
 * Beatboxing
-* React
 * Snare drumming + stick tricks
-* Cooking
 * Toki Pona
 * Barbershop, music theory, jazz chords
-* Cybersecurity
+* Whatever I feel like writing about, isn't that how you're supposed to run a blog?
 
 Development ideas:
 * Custom theme
-* Interactive activity log searcher (React?)
 * More math visuals with jsxgraph, manim, two.js, three.js, ?
