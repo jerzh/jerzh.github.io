@@ -25,6 +25,7 @@ function GraphCanvas(props: { exp: string, range: number, center: number[], calc
     let imageData = ctx.createImageData(ctx.canvas.width, ctx.canvas.height)
     for (let i = 0; i < imageData.data.length / 4; i += 1) {
       const x = (i % imageData.width - imageData.width / 2) / scale + props.center[0]
+      // JS has no integer division??
       const y = (imageData.height / 2 - Math.trunc(i / imageData.width)) / scale + props.center[1]
       const col = props.calcResult(x, y, f)
       imageData.data[4 * i + 0] = 255 * col[0]
