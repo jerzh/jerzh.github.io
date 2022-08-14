@@ -71,6 +71,9 @@ function DomainColor(props: {}) {
       <p>
         <a href='https://github.com/jerzh/IdeaProjects/blob/master/untitled/src/TransformationAnimation.java'>My domain coloring app</a> was one of the first big projects I made back when I first learned how to code in Java. This is a tribute to that project.
       </p>
+      <p>
+        The resolution right now is fairly low (100x100 pixels) because anything larger will create significant lag while attempting to compute the pixel values. I've scaled up the image 3x to make it more visible. I'm currently working on porting this project over to WebGL, where it should be able to take advantage of your computer's graphics card to render the image more efficiently.
+      </p>
       <form>
         <label>
           Enter expression in terms of z and c:

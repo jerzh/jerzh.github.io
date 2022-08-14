@@ -1,10 +1,8 @@
-# Sample workflow for building and deploying a Jekyll site to GitHub Pages
-name: Deploy Jekyll site to Pages
+name: Deploy Jekyll site (with Node) to Pages
 
 on:
-  # Runs on pushes targeting the default branch
   push:
-    branches: ["main"]
+    branches: ["gh-pages"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -21,26 +19,48 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # Build job
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          # Webpack doesn't work (yet) with Node 17
+          node-version: "16.x"
+
+      - name: Install deps
+        run: npm install
+
+      - name: Run build script
+        run: npm run build
+
+      # Jekyll/Pages stuff
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.0' # Not needed with a .ruby-version file
-          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-          cache-version: 0 # Increment this number if you need to re-download cached gems
+          # Not needed with a .ruby-version file
+          ruby-version: '3.0'
+
+          # runs 'bundle install' and caches installed gems automatically
+          bundler-cache: true 
+
+          # Increment this number if you need to re-download cached gems
+          cache-version: 0
+
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v1
-      - run: bundle exec jekyll build --baseurl ${{ steps.pages.outputs.base_path }} # defaults output to '/_site'
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1 # This will automatically upload an artifact from the '/_site' directory
 
-  # Deployment job
+      # defaults output to '/_site'
+      - run: bundle exec jekyll build --baseurl ${{ steps.pages.outputs.base_path }}
+
+      - name: Upload artifact
+        # This will automatically upload an artifact from the '/_site' directory
+        uses: actions/upload-pages-artifact@v1
+
   deploy:
     environment:
       name: github-pages
