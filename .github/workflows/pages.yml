@@ -45,7 +45,7 @@ jobs:
           ruby-version: '3.0'
 
           # runs 'bundle install' and caches installed gems automatically
-          bundler-cache: true 
+          bundler-cache: true
 
           # Increment this number if you need to re-download cached gems
           cache-version: 0
@@ -54,8 +54,9 @@ jobs:
         id: pages
         uses: actions/configure-pages@v1
 
-      # defaults output to '/_site'
-      - run: bundle exec jekyll build --baseurl ${{ steps.pages.outputs.base_path }}
+      - name: Build Jekyll
+        # defaults output to '/_site'
+        run: bundle exec jekyll build --baseurl ${{ steps.pages.outputs.base_path }}
 
       - name: Upload artifact
         # This will automatically upload an artifact from the '/_site' directory
