@@ -1,5 +1,3 @@
-// @ts-nocheck
-// will figure out the types later lol
 import d3 = require('d3')
 
 const width = 500
@@ -69,7 +67,8 @@ async function main() {
 
   // https://observablehq.com/@d3/zoomable-circle-packing
   // d3.pack() calculates the location and radius of each circle
-  const root = d3.pack()
+  // Should be type HierarchyCircularNode<postTree> but TS is mad
+  const root: d3.HierarchyCircularNode<any> = d3.pack()
       .size([width, height])
       .padding(3)
   // d3.hierarchy() organizes the data into a hierarchy
@@ -77,10 +76,12 @@ async function main() {
       .sum(d => d.value)
       .sort((a, b) => b.value - a.value))
   let focus = root
-  let view
+  let view: d3.ZoomView
   let color = d3.scaleLinear()
       .domain([0, 3])
+      // @ts-ignore (using strings here to represent colors still works)
       .range(["hsl(135,80%,80%)", "hsl(211,80%,80%)"])
+      // @ts-ignore
       .interpolate(d3.interpolateHcl)
 
   // Helpful to call console.log(root) to look at exact structure of data
@@ -102,9 +103,9 @@ async function main() {
       .attr("pointer-events", d => d.parent === root ? null : "none")
       .on("mouseover", function() { d3.select(this).attr("stroke", "#000") })
       .on("mouseout", function() { d3.select(this).attr("stroke", null) })
-      .on("click", (event, d) => {
+      .on("click", (event, d: d3.HierarchyCircularNode<postTree>) => {
         if (d.children) focus !== d && (zoom(event, d), event.stopPropagation())
-        else window.location = d.data.url
+        else window.location.href = d.data.url
       })
 
   const label = svg.append("g")
@@ -118,11 +119,11 @@ async function main() {
     .join("text")
       .style("fill-opacity", d => d.parent === root ? 1 : 0)
       .style("display", d => d.parent === root ? "inline" : "none")
-      .text(d => d.data.name)
+      .text((d: d3.HierarchyCircularNode<postTree>) => d.data.name)
 
   zoomTo([root.x, root.y, root.r * 2])
 
-  function zoomTo(v) {
+  function zoomTo(v: d3.ZoomView) {
     const k = width / v[2]
 
     view = v
@@ -132,7 +133,7 @@ async function main() {
     node.attr("r", d => d.r * k)
   }
 
-  function zoom(event, d) {
+  function zoom(_event: any, d: d3.HierarchyCircularNode<postTree>) {
     const focus0 = focus
 
     focus = d
@@ -150,10 +151,13 @@ async function main() {
     node.filter(d => d.parent === focus)
       .attr("pointer-events", null)
 
+    // @ts-ignore
     label.filter(function(d) { return d.parent === focus || this.style.display === "inline" })
       .transition(transition)
         .style("fill-opacity", d => d.parent === focus ? 1 : 0)
+        // @ts-ignore
         .on("start", function(d) { if (d.parent === focus) this.style.display = "inline" })
+        // @ts-ignore
         .on("end", function(d) { if (d.parent !== focus) this.style.display = "none" })
   }
 }
