@@ -87,10 +87,16 @@ function DomainColorHeader(
   return (
     <>
       <p>
-        <a href='https://github.com/jerzh/IdeaProjects/blob/master/untitled/src/TransformationAnimation.java'>My domain coloring app</a> was one of the first big projects I made back when I first learned how to code in Java. This is a tribute to that project.
+        <a href='https://github.com/jerzh/IdeaProjects/blob/master/untitled/src/TransformationAnimation.java'>My domain coloring app</a> was one of the first big projects I made back when I first learned how to code in Java.
+        This is a tribute to that project.
       </p>
       <p>
-        The resolution right now is fairly low (100x100 pixels) because anything larger will create significant lag while attempting to compute the pixel values. I've scaled up the image 3x to make it more visible. I'm currently working on porting this project over to WebGL, where it should be able to take advantage of your computer's graphics card to render the image more efficiently.
+        The resolution right now is fairly low (100x100 pixels) because anything larger will create significant lag while attempting to compute the pixel values.
+        I've scaled up the image 3x to make it more visible.
+      </p>
+      <p>
+        In an ideal world, I'd port this project to WebGL to actually parallelize this computation properly, but there doesn't seem to be an easy way to do this without manually setting up the entire WebGL framework.
+        Luckily, some other projects have already done this: check out <a href="https://github.com/wgxli/complex-function-plotter">wgxli/complex-function-plotter</a>, <a href="https://observablehq.com/@rreusser/adaptive-domain-coloring">rreusser/adaptive-domain-coloring</a>, and <a href="https://github.com/person594/cplot">person594/cplot</a>!
       </p>
       <form>
         <label>
@@ -227,7 +233,8 @@ function GraphCanvasWrapper(
   const maxIter = 20
   return (
     <div className='center2 vertical description fixed-height'>
-      {/* Draw GraphCanvas with the relevant calcResult function. (There is most definitely a better way)
+      {/* Draw GraphCanvas with the relevant calcResult function.
+      (There is most definitely a better way)
       Lol rip the vim syntax coloring is confused */}
       {exp && (graphSettings.graphType === GraphType['Domain coloring'] &&
         <GraphCanvas exp={exp.display} range={graphSettings.range}

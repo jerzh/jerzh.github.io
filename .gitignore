@@ -10,3 +10,6 @@ js
 
 # Ignore generated wasm files
 wasm/*/target
+
+# Special ignore directory for scratch
+scratch
