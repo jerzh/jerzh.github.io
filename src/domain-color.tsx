@@ -96,6 +96,7 @@ function DomainColorHeader(
       </p>
       <p>
         In an ideal world, I'd port this project to WebGL to actually parallelize this computation properly, but there doesn't seem to be an easy way to do this without manually setting up the entire WebGL framework.
+        Thus I'm putting this idea on standby for now.
         Luckily, some other projects have already done this: check out <a href="https://github.com/wgxli/complex-function-plotter">wgxli/complex-function-plotter</a>, <a href="https://observablehq.com/@rreusser/adaptive-domain-coloring">rreusser/adaptive-domain-coloring</a>, and <a href="https://github.com/person594/cplot">person594/cplot</a>!
       </p>
       <form>

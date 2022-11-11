@@ -1,13 +1,12 @@
 Blog post ideas:
 * Overleaf documents (math)
-* Beatboxing
-* Snare drumming + stick tricks
-* Toki Pona
-* Barbershop, music theory, jazz chords
-* Whatever I feel like writing about, isn't that how you're supposed to run a blog?
+* Stats, inference, econometrics
+* Dynamical systems, control theory
+* Summary of little interests over the past few months
 
 Development ideas:
-* GLSL soon to speed up domain coloring project
+* GLSL to speed up domain coloring project
 * Migrate webpack to Vite?
 * Custom theme (Tailwind?)
-* More math visuals with jsxgraph, manim, two.js, three.js, ?
+* Rust-WAsm
+* AlgebraicDynamics.jl
