@@ -4,6 +4,8 @@ _site
 .jekyll-metadata
 vendor
 node_modules
+.DS_Store
+.bundle
 
 # Ignore generated JS files
 js
