@@ -5,9 +5,6 @@ header: jerzh.github.io
 js: [cat-api, domain-color]
 ---
 
-[![headshot](/assets/IMG_1179.jpg){:width="25%"}](/assets/IMG_1179.jpg)
-{:style="text-align: center;"}
-
 <div class="center horizontal">
   <div class="center2 unit-size background-box" markdown="1">
   * Hey! My name is Jeremy. I'm an undergrad at the Massachusetts Institute of Technology.
@@ -22,3 +19,6 @@ js: [cat-api, domain-color]
   * Read more about me in my [blog]({{ site.url }}/blog)!
   </div>
 </div>
+
+[![headshot](/assets/IMG_1179.jpg){:width="25%"}](/assets/IMG_1179.jpg)
+{:style="text-align: center;"}
