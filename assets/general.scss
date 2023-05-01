@@ -1,6 +1,32 @@
 ---
 ---
 
+// TODO: Ignore this error, trying to figure out a way
+// for VSCode to not freak out?
+@import "../_sass/minima";
+
+// Hack to get low opacity background image on top
+// body {
+//   position: relative;
+// }
+
+// body:before {
+//   content: " ";
+//   position: absolute;
+//   left: 0;
+//   top: 0;
+//   width: 100%;
+//   height: 100%;
+//   pointer-events: none;
+//   background-image: url("/assets/IMG_4011.jpg");
+//   background-size: contain;
+//   opacity: 0.1;
+// }
+
+ul {
+  list-style-type: lower-roman;
+}
+
 input {
   margin: 0 5px;
 }
@@ -13,21 +39,39 @@ label > h1:hover {
   text-align: center;
 }
 
-.post-title {
-  transition: 0.5s;
-}
-
-// Probably a good idea to not change the font size since
-// it can change the wrapping of the text, which is not
-// good design? idk what the relevant design principle is
-// but it's definitely not good design
 .post-title:hover {
-  color: green;
-  // font-size: 3.5em;
+  color: $title-color;
+}
+
+li {
+  padding: 5px;
+}
+
+li:hover {
+  background-color: #222;
+  border-radius: 10px;
+}
+
+// woo zoom on hover
+
+li, img, .post-title {
   transition: 0.5s;
 }
 
-// .content
+li:hover, img:hover, .post-title:hover {
+  transform: scale(1.02);
+  transition: 0.5s;
+}
+
+// janky stuff for index page
+
+.background-box {
+  margin: 10px;
+}
+
+.background-box ul {
+  margin-bottom: 0;
+}
 
 .divider {
   margin: 50px 0;
@@ -91,6 +135,10 @@ input[id^='check']:checked ~ .hide {
 
 .horizontal {
   flex-direction: row;
+}
+
+.unit-size {
+  flex: 1 1 0px;
 }
 
 .text-center {

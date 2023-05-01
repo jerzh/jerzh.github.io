@@ -2,7 +2,7 @@
 layout: post
 title:  "Poi spinning is kind of like a better version of juggling"
 date:   2021-12-22 12:57:00 -0600
-categories: poi
+categories: hobbies poi
 external: katex
 ---
 

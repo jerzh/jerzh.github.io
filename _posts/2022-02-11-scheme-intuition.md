@@ -2,7 +2,7 @@
 layout: post
 title:  "Some intuition behind schemes"
 date:   2022-02-11 16:41:00 -0500
-categories: math alggeo
+categories: math alg-geo
 external: katex
 ---
 

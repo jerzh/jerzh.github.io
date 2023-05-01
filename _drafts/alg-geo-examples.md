@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Algebraic geometry through examples"
-categories: math alggeo
+categories: math alg-geo
 external: katex
 ---
 

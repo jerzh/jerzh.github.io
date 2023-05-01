@@ -80,7 +80,7 @@ async function main() {
   let color = d3.scaleLinear()
       .domain([0, 3])
       // @ts-ignore (using strings here to represent colors still works)
-      .range(["hsl(135,80%,80%)", "hsl(211,80%,80%)"])
+      .range(["hsl(135,80%,20%)", "hsl(211,80%,20%)"])
       // @ts-ignore
       .interpolate(d3.interpolateHcl)
 
@@ -99,9 +99,9 @@ async function main() {
     .data(root.descendants().slice(1))
     .join("circle")
       .style("cursor", "pointer")
-      .attr("fill", d => d.children ? color(d.depth) : "white")
+      .attr("fill", d => d.children ? color(d.depth) : "#111")
       .attr("pointer-events", d => d.parent === root ? null : "none")
-      .on("mouseover", function() { d3.select(this).attr("stroke", "#000") })
+      .on("mouseover", function() { d3.select(this).attr("stroke", "#fff") })
       .on("mouseout", function() { d3.select(this).attr("stroke", null) })
       .on("click", (event, d: d3.HierarchyCircularNode<postTree>) => {
         if (d.children) focus !== d && (zoom(event, d), event.stopPropagation())
@@ -109,7 +109,8 @@ async function main() {
       })
 
   const label = svg.append("g")
-      .style("font", "10px sans-serif")
+      .style("font", "12px Times New Roman")
+      .style("fill", "white")
       .attr("pointer-events", "none")
       .attr("text-anchor", "middle")
       // This is how you vertically align text on given coordinates

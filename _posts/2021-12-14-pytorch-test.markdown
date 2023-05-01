@@ -17,14 +17,14 @@ I first used the prototypical example of a neural network: a [multilayer percept
 
 With 10 epochs of training on the learning data, this model attained an accuracy of 87.6%. Not too shabby. I had a bit of fun using [MatPlotLib](https://matplotlib.org/) to see which examples the model got wrong.
 
-![wrong-prediction-haha](/assets/pytorch-test/prediction.png){:width="50%"}
+![wrong-prediction-haha](/assets/pytorch-test/prediction.png){:width="50%" style="background-color: white;"}
 {:style="text-align: center;"}
 
 I soon discovered, however, that the number of interal nodes in this model was somewhat overkill. I eventually shrunk the model to (784, 64, 10), which still maintained an accuracy of 87.1%.
 
 I also discovered that the initial 87.6% was apparently quite close to the ceiling for an MLP, since training for 10 more epochs only brought the accuracy to 87.8%. In fact, the diminishing returns began quite early on. Here's a plot showing the change in accuracy over time:
 
-![accuracy-over-time](/assets/pytorch-test/accuracy.png){:width="50%"}
+![accuracy-over-time](/assets/pytorch-test/accuracy.png){:width="50%" style="background-color: white;"}
 {:style="text-align: center;"}
 
 Note the x-axis. The first epoch alone managed to achieve an 83% accuracy. Of course, more accurate is better, but it would be ideal to somehow converge to 100%, or at least something above 88%.

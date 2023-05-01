@@ -2,7 +2,7 @@
 layout: post
 title:  "My brief foray into snare drumming"
 date:   2022-03-25 00:00:00 -0400
-categories: misc snare
+categories: hobbies snare
 ---
 
 The YouTube snare drumming community is one of the strangest and most counterintuitive niches I've gotten myself into. I have never played the drums and haven't seriously played any instruments at all after quitting piano when I was 11. Although I do like music and music theory, I haven't thought about rhythms for a long time. The only other thing I can really trace this interest to, aside from the YouTube algorithm, is beatboxing (which I will write another post about shortly!). I guess I've also always liked music with [creative and fast-paced rhythms](https://youtu.be/vQd1xc_RYPs).

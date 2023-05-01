@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "The wonderful Julia programming language"
+short_title: "The wonderful Julia language"
 date:   2022-03-21 01:14:00 -0400
 categories: cs software
 external: katex

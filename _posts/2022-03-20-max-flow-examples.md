@@ -8,7 +8,7 @@ external: katex
 
 The [max-flow problem](https://en.wikipedia.org/wiki/Maximum_flow_problem) may appear a bit contrived at first. (Image: Wikipedia)
 
-![max-flow](/assets/max-flow/max-flow.svg){:width="50%"}
+![max-flow](/assets/max-flow/max-flow.svg){:width="50%" style="background-color: white;"}
 {:style="text-align: center;"}
 
 It's clearly useful in situations where an actual notion of flow exists, such as planning water supply throughout a city, but naively that seems to be *all* it's useful for. Surprisingly, this is a tremendous understatement of the power of the max-flow approach as a general framework for algorithmic problems.

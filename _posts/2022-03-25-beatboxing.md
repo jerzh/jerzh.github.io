@@ -2,7 +2,7 @@
 layout: post
 title: "Beatboxing gets funky and polyphonic"
 date:   2022-03-25 00:00:00 -0400
-categories: misc beatbox
+categories: hobbies beatbox
 ---
 
 I think I originally got into beatboxing from Bigman's original song [Confused](https://youtu.be/7RHTK_zwDkA), which (as I hope you agree after you watch the video *ahem*) was composed of sounds so much richer than I ever imagined could be produced out of a person's mouth. After that, the deeper into beatboxing I got, the more I realized that it's been developed into an art and a community has sprung up around it.

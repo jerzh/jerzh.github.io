@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "One of the most satisfying Baba solves I've ever done"
+short_title:  "A satisfying Baba solve"
 date:   2022-01-30 15:56:00 -0500
 categories: puzzle baba
 ---
