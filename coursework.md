@@ -3,19 +3,24 @@ layout: page
 title: Coursework
 header: jerzhou's coursework
 permalink: /coursework/
+external: katex
 ---
 
 Here are some notable classes that I've taken. (G) refers to a graduate-level class.
 
 ## Math
 
-**6.437 (G) Inference and Information**
+**18.656 (G) Mathematical Statistics: A Non-Asymptotic Approach**
+
+Statistical analysis without relying on $$n \to \infty$$: every bound is exactly true regardless of the value of $$n$$. Results are in the form of concentration bounds $$\mathbb{P}[Z_n > t] \le e^{-cnt}$$, bounds on estimation error $$\mathbb{E} \Vert \hat{\theta} - \theta^* \Vert_2^2 \le \frac{c \sigma^2 f(d)}{n}$$ under a constraint $$\theta \in \Theta$$, etc. Full of deep intuitions from geometry and linear algebra!
+
+**6.780 (G) (previously 6.437) Inference and Information**
 
 A fun and fast-paced class about inferring parameters from data in both Bayesian and non-Bayesian manners. Lots of information theory as well. Get comfortable with taking expectations and integrals of everything and trying to visualize infinite-dimensional spaces of probability distributions.
 
 **18.650 Fundamentals of Statistics**
 
-Statistical theory (Central Limit Theorem repeatedly) and statistical tests such as the Wald test, t-test, permutation tests, etc.
+Asymptotic statistical theory (Central Limit Theorem repeatedly) and statistical tests such as the Wald test, t-test, permutation tests, etc.
 
 **6.S095 Intermediate Probability Problem Solving**
 
@@ -31,15 +36,19 @@ Difficult class with a very Olympiad-like flavor and lots of interesting, deep t
 
 ## CS
 
-**6.869 (G) Advances in Computer Vision**
+**6.566 (G) (previously 6.858) Computer Systems Security**
+
+Survey of security principles and defenses across computer systems, such as memory safety, operating systems, software isolation, symbolic verification, client device security, web security, networks, authentication, etc.
+
+**6.830 (G) (previously 6.869) Advances in Computer Vision**
 
 Traditional computer vision, e.g. Sobel filters, all the way up to modern-day CNNs and ResNet/robust ImageNet. Comes with lots of very nice and some very creepy machine-generated images.
 
-**6.046 Design and Analysis of Algorithms**
+**6.122 (previously 6.046) Design and Analysis of Algorithms**
 
 Median finding, hashing, flow networks, linear optimization, randomized algorithms, amortized analysis, computability, the whole grab bag.
 
-**6.036 Introduction to Machine Learning**
+**6.390 (previously 6.036) Introduction to Machine Learning**
 
 (Self-study) Lots of theory with interesting perspectives such as Markov decision processes.
 
@@ -52,6 +61,10 @@ Learn web app development in a stack of your choice: I learned Django, HTML/CSS/
 Writing instructions for an army of bots. Competitive programming plus strategy. It was also good Java practice.
 
 ## Economics
+
+**14.382 (G) Econometrics**
+
+I was in this fast-paced class for the first 5 weeks. Topics like conditional IV, GMM, and bootstrap (but mostly GMM, since everything is GMM).
 
 **14.32 Econometrics**
 

@@ -32,7 +32,11 @@ I'm sure you can infer that you are the wall now and that flags are now your pri
 
 That's better.
 
-And this is barely the beginning. You might understand what's going on right now, but Arvi has a way of finding endless interesting tricks even with rules as seemingly straightforward as Push and Stop. One single word can have so many different effects, and it's up to you to puzzle through it all and figure them out. I display a level here (Solitary Isle-Extra 5) for effect, but good luck. This level is notorious. (It doesn't explicitly have to do with the Stop rule; it's more about the mechanics of Push, which is implicit since Text is always Push by default.)
+And this is barely the beginning. You might understand what's going on right now, but Arvi has a way of finding endless interesting tricks even with rules as seemingly straightforward as Push and Stop. One single word can have so many different effects, and it's up to you to puzzle through it all and figure them out. I display a level here (Solitary Isle-Extra 5) for effect, but good luck. This level is notorious.
+<p><details>
+  <summary>Spoiler</summary>
+  (It doesn't explicitly have to do with the Stop rule; it's more about the mechanics of Push, which is implicit since Text is always Push by default.)
+</details></p>
 
 ![baba-level-2-e5](/assets/baba-is-you/Dungeon.png){:width="100%"}
 

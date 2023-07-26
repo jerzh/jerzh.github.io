@@ -6,13 +6,12 @@ categories: personal
 
 I also want to do a data analysis project at some point since I've been learning so much data science and stats recently, wink wink.
 
-* "hello" my journal
 * "schedule" my hourly activity log
-* "why life hard" my daily activity log
+* "why life hard" my daily activity log (inactive)
 * "sleep log"
 * "grocery shopping log"
 * "cooking log"
-* "interest map" which I update every few months
+* "interest map"
 * "interest timeline"
 * "list of songs" numbering in the thousands
 * "chord progressions"
