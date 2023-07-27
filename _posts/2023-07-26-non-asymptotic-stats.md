@@ -58,7 +58,7 @@ Here is the Chernoff bound:
 
 $$\mathbb{P}\left[ X \ge t \right] \le \min_\lambda \frac{\mathbb{E}[e^{\lambda X}]}{e^{\lambda t}}.$$
 
-Notice that the numerator is the MGF (in fact, the bound itself is the negative [Legendre transform](https://en.wikipedia.org/wiki/Legendre_transformation) of the MGF). With respect to the Chernoff bound especially, I can't empahsize enough how differently I conceptualized it between 6.046 (Algorithms) and this class. In 6.046, I just memorized special cases of the bound and could not remember it for the life of me, but now I think of the Chernoff bound as the foundation of *all* exponential concentration inequalities in the entirety of statistics (because it is). To my understanding, it's also the backbone of the entire field of [large deviations theory](https://en.wikipedia.org/wiki/Large_deviations_theory). And the proof is a super simple extension of Markov's inequality:
+Notice that the numerator is the MGF (in fact, the bound itself uses the [Legendre transform](https://en.wikipedia.org/wiki/Legendre_transformation) of the log MGF). With respect to the Chernoff bound especially, I can't empahsize enough how differently I conceptualized it between 6.046 (Algorithms) and this class. In 6.046, I just memorized special cases of the bound and could not remember it for the life of me, but now I think of the Chernoff bound as the foundation of *all* exponential concentration inequalities in the entirety of statistics (because it is). To my understanding, it's also the backbone of the entire field of [large deviations theory](https://en.wikipedia.org/wiki/Large_deviations_theory). And the proof is a super simple extension of Markov's inequality:
 
 $$\mathbb{P}\left[ X \ge t \right] \le \frac{\mathbb{E}[X]}{t}$$
 
