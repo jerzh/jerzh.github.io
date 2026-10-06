@@ -18,10 +18,6 @@ Statistical analysis without relying on $$n \to \infty$$: every bound is exactly
 
 A fun and fast-paced class about inferring parameters from data in both Bayesian and non-Bayesian manners. Lots of information theory as well. Get comfortable with taking expectations and integrals of everything and trying to visualize infinite-dimensional spaces of probability distributions.
 
-**18.650 Fundamentals of Statistics**
-
-Asymptotic statistical theory (Central Limit Theorem repeatedly) and statistical tests such as the Wald test, t-test, permutation tests, etc.
-
 **6.S095 Intermediate Probability Problem Solving**
 
 A very fast-paced and problem-solving oriented class that was difficult to keep up with but a great introduction to using probability in practice.
@@ -48,23 +44,15 @@ Traditional computer vision, e.g. Sobel filters, all the way up to modern-day CN
 
 Median finding, hashing, flow networks, linear optimization, randomized algorithms, amortized analysis, computability, the whole grab bag.
 
-**6.390 (previously 6.036) Introduction to Machine Learning**
-
-(Self-study) Lots of theory with interesting perspectives such as Markov decision processes.
-
 **Full Stack App Development**
 
 Learn web app development in a stack of your choice: I learned Django, HTML/CSS/JavaScript (jQuery, D3), PostgreSQL.
-
-**6.147 Battlecode**
-
-Writing instructions for an army of bots. Competitive programming plus strategy. It was also good Java practice.
 
 ## Economics
 
 **14.382 (G) Econometrics**
 
-I was in this fast-paced class for the first 5 weeks. Topics like conditional IV, GMM, and bootstrap (but mostly GMM, since everything is GMM).
+Topics like conditional IV, GMM, and bootstrap (but mostly GMM, since everything is GMM).
 
 **14.32 Econometrics**
 
@@ -81,12 +69,6 @@ The impact of colonialism, whether leaders matter, what causes conflict, all thr
 **14.13 Psychology and Economics**
 
 (Self-study) What are we but partially naive quasihyperbolic discounters?
-
-## Business
-
-**15.076 Analytics for a Better World**
-
-Solving all kinds of optimization problems to make the world better in a very concrete way, using large datasets and powerful optimization tools (including machine learning!).
 
 ## Physics
 
