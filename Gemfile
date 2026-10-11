@@ -30,3 +30,6 @@ gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
 
 
 gem "webrick", "~> 1.7"
+
+# Ruby 3.4 no longer ships bigdecimal as a default gem, but liquid 4 requires it
+gem "bigdecimal"
