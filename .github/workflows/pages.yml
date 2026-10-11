@@ -2,7 +2,7 @@ name: Deploy Jekyll site (with Node) to Pages
 
 on:
   push:
-    branches: ["gh-pages"]
+    branches: ["main"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -23,13 +23,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v7
 
       - name: Set up Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v7
         with:
-          # Webpack doesn't work (yet) with Node 17
-          node-version: "16.x"
+          node-version: "24.x"
 
       - name: Install deps
         run: npm install
@@ -42,7 +41,7 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           # Not needed with a .ruby-version file
-          ruby-version: '3.0'
+          ruby-version: '3.4'
 
           # runs 'bundle install' and caches installed gems automatically
           bundler-cache: true
@@ -52,7 +51,7 @@ jobs:
 
       - name: Setup Pages
         id: pages
-        uses: actions/configure-pages@v1
+        uses: actions/configure-pages@v6
 
       - name: Build Jekyll
         # defaults output to '/_site'
@@ -60,7 +59,7 @@ jobs:
 
       - name: Upload artifact
         # This will automatically upload an artifact from the '/_site' directory
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v5
 
   deploy:
     environment:
@@ -71,4 +70,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v5
