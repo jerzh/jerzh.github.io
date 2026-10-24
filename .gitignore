@@ -15,3 +15,6 @@ wasm/*/target
 
 # Special ignore directory for scratch
 scratch
+
+# Local secrets
+.env

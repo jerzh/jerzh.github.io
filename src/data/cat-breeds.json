@@ -1,0 +1,537 @@
+[
+  {
+    "name": "Abyssinian",
+    "reference_image_id": "KWdLHmOqc",
+    "description": "Medium-sized, elegant cat with a distinctive ticked coat pattern giving a wild appearance. Known for its athletic build, almond-shaped eyes, and highly active, curious personality."
+  },
+  {
+    "name": "Aegean",
+    "reference_image_id": "h19-vtIeX",
+    "description": "Medium-sized natural breed with a semi-longhaired coat, muscular build, and almond-shaped eyes. One of the oldest domesticated cat breeds, known for its love of water and fishing heritage."
+  },
+  {
+    "name": "American Bobtail",
+    "reference_image_id": "8r4M61iyS",
+    "description": "Medium to large cat with a distinctive naturally short tail, wild appearance, and athletic build. Known for its dog-like personality and exceptional intelligence."
+  },
+  {
+    "name": "American Curl",
+    "reference_image_id": "ZZmFRKWZZ",
+    "description": "Medium-sized cat with distinctive backward-curling ears, elegant body, and silky coat. Known for its kitten-like personality that persists into adulthood."
+  },
+  {
+    "name": "American Ringtail",
+    "reference_image_id": null,
+    "description": "Medium-sized cat with distinctive curled tail that curls over the back. Natural mutation first observed in California."
+  },
+  {
+    "name": "American Shorthair",
+    "reference_image_id": "MuEGe1-Sz",
+    "description": "Medium to large muscular cat with a round face, short dense coat, and powerful build. Known for its easy-going temperament and exceptional hunting abilities."
+  },
+  {
+    "name": "American Wirehair",
+    "reference_image_id": "bTo6m3PVg",
+    "description": "Medium to large cat with a unique crimped, wiry coat that feels springy to the touch. Similar build to American Shorthair but with distinctive coat texture."
+  },
+  {
+    "name": "Aphrodite Giant",
+    "reference_image_id": null,
+    "description": "Large natural breed from Cyprus with muscular build. One of the largest natural cat breeds."
+  },
+  {
+    "name": "Arabian Mau",
+    "reference_image_id": "zlpgGWqN7",
+    "description": "Medium to large, muscular cat with a natural, athletic build adapted to desert conditions. Known for excellent health and survival instincts."
+  },
+  {
+    "name": "Asian Semi-longhair",
+    "reference_image_id": null,
+    "description": "Medium-sized elegant cat with a semi-long silky coat and graceful appearance. Related to the Burmese with a longer coat."
+  },
+  {
+    "name": "Australian Mist",
+    "reference_image_id": "zTiuUpmqf",
+    "description": "Medium-sized spotted or marbled cat with a misty appearance to its coat. Developed specifically as an indoor companion cat."
+  },
+  {
+    "name": "Balinese",
+    "reference_image_id": "obRjvWv-e",
+    "description": "Elegant, svelte cat with long silky coat and striking blue eyes. Essentially a longhaired Siamese with the same pointed coloration and athletic build."
+  },
+  {
+    "name": "Bambino",
+    "reference_image_id": "Oaoo1ky3A",
+    "description": "Small, hairless cat with short legs combining Sphynx and Munchkin traits. Has large upright ears and wrinkled skin typical of hairless breeds."
+  },
+  {
+    "name": "Bengal",
+    "reference_image_id": "dN6eoeLjY",
+    "description": "Medium to large, muscular cat with a distinctive wild appearance featuring spotted or marbled coat patterns. Highly athletic and intelligent with an exotic look."
+  },
+  {
+    "name": "Birman",
+    "reference_image_id": "ln1Ks7VIu",
+    "description": "Medium to large, colorpointed cat with long silky coat, white gloved paws, and striking blue eyes. Known for its gentle, docile temperament."
+  },
+  {
+    "name": "Bombay",
+    "reference_image_id": "BkksyH95Z",
+    "description": "Medium-sized, muscular jet-black cat with striking copper or gold eyes. Bred to resemble a miniature black panther with a sleek, patent-leather coat."
+  },
+  {
+    "name": "Brazilian Shorthair",
+    "reference_image_id": null,
+    "description": "Medium-sized, elegant cat with a muscular build and short, close-lying coat. Brazil's only internationally recognized cat breed."
+  },
+  {
+    "name": "British Longhair",
+    "reference_image_id": "re7uO34hz",
+    "description": "Large, round cat with plush long coat and characteristic cobby body. The longhaired version of the British Shorthair with the same gentle personality."
+  },
+  {
+    "name": "British Shorthair",
+    "reference_image_id": "HYTJQgs2M",
+    "description": "Large, round, cobby cat with dense plush coat and characteristic chubby cheeks. Known for its calm, easy-going temperament and teddy bear appearance."
+  },
+  {
+    "name": "British Tipped",
+    "reference_image_id": null,
+    "description": "Medium to large cat with British type and tipped/shaded coat pattern. Elegant variety of British cats."
+  },
+  {
+    "name": "Burmese",
+    "reference_image_id": "92D9NZLs0",
+    "description": "Medium-sized, muscular cat with a compact body, rounded head, and expressive golden eyes. Known for its dog-like personality and love of human companionship."
+  },
+  {
+    "name": "Burmilla",
+    "reference_image_id": "J4Jv10E7O",
+    "description": "Medium-sized elegant cat with a sparkling silver-shaded or tipped coat. Combines Burmese personality with Chinchilla Persian coloring."
+  },
+  {
+    "name": "Burmoir",
+    "reference_image_id": null,
+    "description": "Medium-sized elegant cat combining Burmese type with silver coloring. Rare variety."
+  },
+  {
+    "name": "California Spangled",
+    "reference_image_id": "B1ERTmgph",
+    "description": "Medium to large spotted cat bred to resemble wild cats. Athletic build with a low-slung, hunting-cat movement."
+  },
+  {
+    "name": "Caracat",
+    "reference_image_id": null,
+    "description": "Large hybrid between caracal and domestic cat. Extremely rare and controversial.,16-22,41-56,14-20,36-51,20-30,9.1-13.6,15-25,6.8-11.3,15-20"
+  },
+  {
+    "name": "Chantilly-Tiffany",
+    "reference_image_id": "TR-5nAd_S",
+    "description": "Medium-sized semi-longhaired cat with a silky chocolate or other colored coat and golden eyes. Known for its devoted, affectionate nature."
+  },
+  {
+    "name": "Chartreux",
+    "reference_image_id": "3-DZDkDGa",
+    "description": "Medium to large, muscular cat with distinctive blue-gray woolly coat and copper or orange eyes. Known for its quiet, observant nature and sweet smile."
+  },
+  {
+    "name": "Chausie",
+    "reference_image_id": "snxE5_PPX",
+    "description": "Large, athletic hybrid cat with a wild appearance derived from jungle cat ancestry. Long-legged and muscular with tufted ears."
+  },
+  {
+    "name": "Chausie",
+    "reference_image_id": null,
+    "description": "Large, athletic hybrid cat with wild appearance derived from jungle cat ancestry. Long-legged and muscular with tufted ears."
+  },
+  {
+    "name": "Cheetoh",
+    "reference_image_id": "L-aDi29wP",
+    "description": "Large spotted cat combining Bengal and Ocicat heritage. Athletic build with wild appearance but gentle domestic personality."
+  },
+  {
+    "name": "Colorpoint Shorthair",
+    "reference_image_id": "lOl0J96On",
+    "description": "Medium-sized, elegant cat with Siamese body type and pointed pattern in non-traditional colors like red, cream, and tortie points."
+  },
+  {
+    "name": "Cornish Rex",
+    "reference_image_id": "o81wWm6-Z",
+    "description": "Medium-sized, elegant cat with distinctive wavy coat, long legs, and arched back. Known for its playful, kitten-like personality throughout life."
+  },
+  {
+    "name": "Cymric",
+    "reference_image_id": "GQ61BDToD",
+    "description": "Medium-sized longhaired tailless cat, the longhaired version of the Manx. Round body with powerful hindquarters."
+  },
+  {
+    "name": "Cyprus",
+    "reference_image_id": "S97Qj5YYO",
+    "description": "Medium-sized natural breed with athletic build. One of the oldest cat breeds, native to Cyprus island."
+  },
+  {
+    "name": "Devon Rex",
+    "reference_image_id": "lJHXU7DlQ",
+    "description": "Small to medium cat with distinctive wavy coat, large ears, and pixie-like face. Known for its mischievous, dog-like personality."
+  },
+  {
+    "name": "Domestic Longhair",
+    "reference_image_id": null,
+    "description": "Mixed-breed cat of no specific pedigree with long coat. Common companion cat worldwide."
+  },
+  {
+    "name": "Domestic Mediumhair",
+    "reference_image_id": null,
+    "description": "Mixed-breed cat of no specific pedigree with medium-length coat. Common companion worldwide."
+  },
+  {
+    "name": "Domestic Shorthair",
+    "reference_image_id": null,
+    "description": "Mixed-breed cat of no specific pedigree with short coat. The most common cat in the world."
+  },
+  {
+    "name": "Donskoy",
+    "reference_image_id": "Z9zxhFVdw",
+    "description": "Medium-sized hairless or partially hairless cat with wrinkled skin, long ears, and almond-shaped eyes. Russian origin hairless breed."
+  },
+  {
+    "name": "Dragon Li",
+    "reference_image_id": "KrDYENsA3",
+    "description": "Medium to large muscular cat with distinctive golden-brown tabby coat. Ancient Chinese natural breed also known as Chinese Li Hua."
+  },
+  {
+    "name": "Dwelf",
+    "reference_image_id": null,
+    "description": "Small, hairless cat with curled ears and short legs. Triple hybrid combining Sphynx, Munchkin, and American Curl.,6-9,15-23,5-8,13-20,4-9,1.8-4,3-7,1.4-3.2,12-15"
+  },
+  {
+    "name": "Egyptian Mau",
+    "reference_image_id": "4_AdeyZUv",
+    "description": "Medium-sized, muscular spotted cat with distinctive gooseberry-green eyes. One of the few naturally spotted domestic cat breeds."
+  },
+  {
+    "name": "Elf Cat",
+    "reference_image_id": null,
+    "description": "Medium-sized hairless cat with distinctive curled ears. Combines Sphynx and American Curl traits.,9-12,23-30,8-10,20-25,10-15,4.5-6.8,8-12,3.6-5.4,12-15"
+  },
+  {
+    "name": "European Burmese",
+    "reference_image_id": "YOjBThApG",
+    "description": "Medium-sized elegant cat with slightly more moderate features than American Burmese. Sweet expression and silky coat."
+  },
+  {
+    "name": "European Shorthair",
+    "reference_image_id": null,
+    "description": "A medium-sized, muscular cat breed native to Europe, known for its sweet temperament, strong hunting instincts, and a short, dense, weather-resistant coat."
+  },
+  {
+    "name": "Exotic Longhair",
+    "reference_image_id": null,
+    "description": "A medium to large cat breed that shares the round head, sweet expression, and cobby body of the Persian and Exotic Shorthair, but features a long, plush, and dense coat."
+  },
+  {
+    "name": "Exotic Shorthair",
+    "reference_image_id": "ySzdVwyb1",
+    "description": "Medium to large, cobby cat with Persian features but short, plush coat. Known as the 'lazy man's Persian' for easier grooming needs."
+  },
+  {
+    "name": "Foldex",
+    "reference_image_id": null,
+    "description": "Small to medium cat with round face, folded ears, and short plush coat. Combines Scottish Fold and Exotic Shorthair traits."
+  },
+  {
+    "name": "Genetta",
+    "reference_image_id": null,
+    "description": "Small, short-legged spotted cat bred to resemble the African Genet. Combines Munchkin and spotted breeds."
+  },
+  {
+    "name": "German Rex",
+    "reference_image_id": null,
+    "description": "Medium-sized cat with wavy coat similar to other Rex breeds. Slender build with large ears."
+  },
+  {
+    "name": "Havana Brown",
+    "reference_image_id": "gQggWSR5I",
+    "description": "Medium-sized, elegant chocolate-brown cat with distinctive corn-cob shaped muzzle and green eyes. Known for its rich mahogany coat."
+  },
+  {
+    "name": "Highlander",
+    "reference_image_id": null,
+    "description": "Medium to large muscular cat with curled ears and often a bobbed tail. Unique wild appearance with gentle personality."
+  },
+  {
+    "name": "Himalayan",
+    "reference_image_id": "KBjPMWOsK",
+    "description": "Medium to large, cobby cat with Persian body type and Siamese colorpoint pattern. Long luxurious coat and blue eyes."
+  },
+  {
+    "name": "Japanese Bobtail",
+    "reference_image_id": "Sw_EWWLW-",
+    "description": "Medium-sized cat with distinctive pom-pom tail and elegant, slender build. Traditional Japanese breed."
+  },
+  {
+    "name": "Javanese",
+    "reference_image_id": "BTiGuPOqW",
+    "description": "Medium-sized, elegant longhaired cat with Siamese body type. Comes in colorpoint patterns not found in Balinese."
+  },
+  {
+    "name": "Kanaani",
+    "reference_image_id": null,
+    "description": "Medium to large spotted cat derived from African wildcat and domestic breeds. Wild appearance with domestic temperament."
+  },
+  {
+    "name": "Kellas Cat",
+    "reference_image_id": null,
+    "description": "Large, melanistic wild-domestic hybrid found in Scotland. Not a true domestic breed.,14-18,36-46,12-16,30-41,8-15,3.6-6.8,6-12,2.7-5.4,Unknown"
+  },
+  {
+    "name": "Khao Manee",
+    "reference_image_id": "iyFN2mF8l",
+    "description": "Medium-sized, muscular white cat with striking blue, gold, or odd-colored eyes. Ancient Thai royal cat."
+  },
+  {
+    "name": "Korat",
+    "reference_image_id": "1TcC-kiI1",
+    "description": "Medium-sized, muscular cat with distinctive blue-gray coat and heart-shaped face. Ancient Thai breed known as good luck symbol."
+  },
+  {
+    "name": "Kurilian Bobtail",
+    "reference_image_id": "NZpO4pU56M",
+    "description": "Medium to large muscular cat with distinctive pom-pom bobbed tail. Natural breed from Russian Kuril Islands."
+  },
+  {
+    "name": "LaPerm",
+    "reference_image_id": "in-CD5LH5",
+    "description": "Medium-sized cat with distinctive curly or wavy coat ranging from tight ringlets to long corkscrew curls."
+  },
+  {
+    "name": "Lykoi",
+    "reference_image_id": null,
+    "description": "Medium-sized cat with unique partially hairless coat resembling a werewolf. Distinctive appearance with varying amounts of fur."
+  },
+  {
+    "name": "Maine Coon",
+    "reference_image_id": "jyjEWK7xp",
+    "description": "Large to very large, muscular cat with long shaggy coat, tufted ears, and bushy tail. One of the largest domestic cat breeds."
+  },
+  {
+    "name": "Malayan",
+    "reference_image_id": null,
+    "description": "Medium-sized cat similar to Burmese but in different colors. Elegant and muscular with satin-like coat."
+  },
+  {
+    "name": "Manx",
+    "reference_image_id": "i9HsL15nJ",
+    "description": "Medium-sized, compact cat with round body and no tail or partial tail. Powerful hindquarters give rabbit-like hopping gait."
+  },
+  {
+    "name": "Minskin",
+    "reference_image_id": null,
+    "description": "Small cat with short legs, sparse coat on body, and fully furred points. Combines Munchkin and hairless breed traits."
+  },
+  {
+    "name": "Minuet",
+    "reference_image_id": null,
+    "description": "Small to medium cat with short legs and round Persian-type face. Also known as Napoleon cat."
+  },
+  {
+    "name": "Munchkin",
+    "reference_image_id": "vDFI6jI2O",
+    "description": "Small to medium cat with distinctive very short legs and long body. Normal-sized cat with achondroplastic legs."
+  },
+  {
+    "name": "Napoleon Longhair",
+    "reference_image_id": null,
+    "description": "Small to medium cat with short legs and long plush coat. Longhaired variety of the Minuet.,7-9,18-23,6-8,15-20,5-9,2.3-4,4-7,1.8-3.2,9-15"
+  },
+  {
+    "name": "Nebelung",
+    "reference_image_id": "KpHqQPUPW",
+    "description": "Medium-sized, elegant cat with long, silky blue-gray coat and green eyes. Longhaired version of Russian Blue."
+  },
+  {
+    "name": "Norwegian Forest Cat",
+    "reference_image_id": "rBuGgH_Wj",
+    "description": "Large, sturdy cat with long, water-resistant double coat and strong build. Natural breed adapted to cold Norwegian climate."
+  },
+  {
+    "name": "Ocicat",
+    "reference_image_id": "HksHrR8-9",
+    "description": "Medium to large, athletic spotted cat with wild appearance but fully domestic genetics. Muscular and graceful."
+  },
+  {
+    "name": "Ojos Azules",
+    "reference_image_id": null,
+    "description": "Medium-sized cat distinctive for its deep blue eyes regardless of coat color. Very rare breed."
+  },
+  {
+    "name": "Oriental Longhair",
+    "reference_image_id": null,
+    "description": "Elegant longhaired version of the Oriental Shorthair with silky flowing coat. Same tubular body and large ears."
+  },
+  {
+    "name": "Oriental Shorthair",
+    "reference_image_id": "xbW2bsXfK",
+    "description": "Medium-sized, elegant cat with long tubular body, large ears, and wedge-shaped head. Siamese body type in hundreds of colors."
+  },
+  {
+    "name": "Pantherette",
+    "reference_image_id": null,
+    "description": "Medium to large, muscular black cat bred to resemble a black panther. Experimental breed.,12-15,30-38,10-13,25-33,10-18,4.5-8.2,8-14,3.6-6.4,12-15"
+  },
+  {
+    "name": "Persian",
+    "reference_image_id": "Pqtwt4FCq",
+    "description": "Medium to large, cobby cat with distinctive flat face, long luxurious coat, and calm demeanor. One of the oldest and most popular breeds."
+  },
+  {
+    "name": "Peterbald",
+    "reference_image_id": null,
+    "description": "Medium-sized, elegant hairless or partially haired cat with long narrow head and large ears. Russian breed related to Oriental type."
+  },
+  {
+    "name": "Pixie-bob",
+    "reference_image_id": "fAYgJmLM8",
+    "description": "Medium to large, muscular cat with bobbed tail and wild appearance. Resembles North American bobcat."
+  },
+  {
+    "name": "Polydactyl",
+    "reference_image_id": null,
+    "description": "Domestic cat of any breed or type with extra toes. Can occur in any cat population."
+  },
+  {
+    "name": "Raas",
+    "reference_image_id": null,
+    "description": "Medium to large natural breed from Raas Island, Indonesia. Robust build with distinctive wild appearance."
+  },
+  {
+    "name": "Ragamuffin",
+    "reference_image_id": "SMuZx-bFM",
+    "description": "Large, cuddly cat with plush coat and sweet expression. Related to Ragdoll but with more coat colors and patterns allowed."
+  },
+  {
+    "name": "Ragdoll",
+    "reference_image_id": "80kGxlgR1",
+    "description": "Large, gentle cat famous for going limp when picked up. Striking blue eyes and colorpoint semi-long coat."
+  },
+  {
+    "name": "Russian Blue",
+    "reference_image_id": "S-1YzA7-_",
+    "description": "Medium-sized, elegant cat with distinctive blue-gray double coat and emerald green eyes. Known for reserved but affectionate nature."
+  },
+  {
+    "name": "Safari",
+    "reference_image_id": null,
+    "description": "Large hybrid cat crossed from Geoffroy's cat and domestic breeds. Rare with wild appearance."
+  },
+  {
+    "name": "Savannah",
+    "reference_image_id": "qf6MhNS8z",
+    "description": "Large to very large tall spotted cat, a hybrid between domestic cat and African serval. Wild appearance with domestic temperament."
+  },
+  {
+    "name": "Scottish Fold",
+    "reference_image_id": "dkN5wGUxC",
+    "description": "Medium-sized round cat with distinctive folded ears that give an owl-like appearance. Known for sweet, gentle personality."
+  },
+  {
+    "name": "Selkirk Rex",
+    "reference_image_id": "B2YB13Ydq",
+    "description": "Medium to large cat with plush, curly coat resembling a teddy bear. More stocky build than other Rex breeds."
+  },
+  {
+    "name": "Serengeti",
+    "reference_image_id": null,
+    "description": "Medium to large, long-legged spotted cat developed to resemble wild serval without wild genetics."
+  },
+  {
+    "name": "Siamese",
+    "reference_image_id": "Xwp-MBOtI",
+    "description": "Medium-sized, elegant cat with distinctive colorpoint pattern, blue eyes, and wedge-shaped head. One of the most recognizable breeds."
+  },
+  {
+    "name": "Siberian",
+    "reference_image_id": "IJyPTBLyU",
+    "description": "Large, powerful cat with long triple coat and strong build. Russia's national cat adapted to harsh Siberian climate."
+  },
+  {
+    "name": "Singapura",
+    "reference_image_id": "GOvziuOyw",
+    "description": "Small, muscular cat with distinctive sepia agouti coat and large eyes. One of the smallest domestic cat breeds."
+  },
+  {
+    "name": "Singapura Tabby",
+    "reference_image_id": null,
+    "description": "Small, muscular cat with tabby pattern variation of Singapura. Extremely rare.,7-9,18-23,6-8,15-20,4-8,1.8-3.6,4-6,1.8-2.7,12-15"
+  },
+  {
+    "name": "Skookum",
+    "reference_image_id": null,
+    "description": "Small cat with short legs and curly coat. Combines Munchkin and LaPerm traits."
+  },
+  {
+    "name": "Snowshoe",
+    "reference_image_id": "BB18hZT2z",
+    "description": "Medium-sized pointed cat with distinctive white feet, blue eyes, and inverted V marking on face."
+  },
+  {
+    "name": "Sokoke",
+    "reference_image_id": null,
+    "description": "Medium-sized, athletic cat with distinctive modified tabby pattern. Natural breed from Kenya's Sokoke forest."
+  },
+  {
+    "name": "Somali",
+    "reference_image_id": "yLnM69IIz",
+    "description": "Medium-sized, elegant cat with long ticked coat and bushy tail. Longhaired version of the Abyssinian."
+  },
+  {
+    "name": "Sphynx",
+    "reference_image_id": "2hPNn0Wrr",
+    "description": "Medium-sized, hairless cat with wrinkled skin, large ears, and muscular body. Known for affectionate, attention-seeking personality."
+  },
+  {
+    "name": "Suphalak",
+    "reference_image_id": null,
+    "description": "Medium-sized, muscular cat with solid reddish-brown coat. Ancient Thai breed mentioned in Cat Book Poems."
+  },
+  {
+    "name": "Thai",
+    "reference_image_id": null,
+    "description": "Medium-sized pointed cat representing the traditional Siamese type. Less extreme features than modern Siamese."
+  },
+  {
+    "name": "Tonkinese",
+    "reference_image_id": "TYQKhQ3mn",
+    "description": "Medium-sized, muscular cat combining Siamese and Burmese traits. Pointed pattern with aqua eyes in mink color."
+  },
+  {
+    "name": "Toybob",
+    "reference_image_id": null,
+    "description": "Very small, compact cat with bobbed tail. One of the smallest cat breeds but muscular and active."
+  },
+  {
+    "name": "Toyger",
+    "reference_image_id": "Ba-qRZ_8n",
+    "description": "Medium to large, muscular cat with distinctive tiger-like tabby stripes. Bred to resemble a miniature tiger."
+  },
+  {
+    "name": "Turkish Angora",
+    "reference_image_id": "KU_LUntSX",
+    "description": "Medium-sized, elegant cat with long silky coat and graceful build. One of the oldest natural cat breeds."
+  },
+  {
+    "name": "Turkish Van",
+    "reference_image_id": "NHiuHD4Ax",
+    "description": "Large, muscular cat with distinctive Van pattern (colored head and tail, white body). Famous for loving water."
+  },
+  {
+    "name": "Ukrainian Levkoy",
+    "reference_image_id": null,
+    "description": "Medium-sized, hairless cat with distinctive folded ears. Unique combination of hairlessness and ear fold."
+  },
+  {
+    "name": "York Chocolate",
+    "reference_image_id": "xIICfnlNm",
+    "description": "Large, semi-longhaired cat with rich chocolate or lavender coat. Farm cat origin with affectionate personality."
+  }
+]

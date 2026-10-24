@@ -1,6 +1,9 @@
 import React = require('react')
 import ReactDOM = require('react-dom')
 import ReactQuery = require('react-query')
+// Snapshot of /v1/breeds (the breed endpoints now require an API key).
+// Regenerate with: node --env-file=.env scripts/fetch-cat-breeds.js
+import catBreeds = require('./data/cat-breeds.json')
 
 // Unwrap response
 async function handleSearchResponse(response) {
@@ -58,7 +61,7 @@ function CatAPIRow(props: {breed: CatBreed}) {
         </div>
       </div>
       <div className='center vertical description'>
-        <p> <a href={breed.wikipedia_url}>
+        <p> <a href={`https://en.wikipedia.org/w/index.php?search=${encodeURIComponent(breed.name + ' cat')}`}>
           <b> {breed.name} </b>
         </a> </p>
         <p> {breed.description || '(No description provided)'} </p>
@@ -74,8 +77,7 @@ const queryClient = new ReactQuery.QueryClient()
 // are also good
 interface CatBreed {
   name: string,
-  reference_image_id: string,
-  wikipedia_url: string,
+  reference_image_id: string | null,
   description: string
 }
 
@@ -100,18 +102,20 @@ class CatAPI extends React.Component<{}, CatState> {
   // This was fun to debug lol
 
   // Instant updates! (a deliberate design decision to demonstrate React)
-  async handleChange(event: { target: { value: string } }) {
-    this.setState({ query: event.target.value })
-
-    const breedData = await this.fetchCatSearch(event.target.value)
-      .catch()
-    this.setState({ breedData: breedData })
+  handleChange(event: { target: { value: string } }) {
+    const query = event.target.value
+    this.setState({ query: query, breedData: this.searchBreeds(query) })
   }
 
-  async fetchCatSearch(query: string) {
-    const response = await fetch(`https://api.thecatapi.com/v1/breeds/search?q=${query}`)
-    const data = await handleSearchResponse(response)
-    return data.slice(0, 10)
+  // Mimics the old /v1/breeds/search: case-insensitive substring match on name
+  searchBreeds(query: string): CatBreed[] {
+    const q = query.trim().toLowerCase()
+    if (q === '') {
+      return []
+    }
+    return catBreeds
+      .filter(breed => breed.name.toLowerCase().includes(q))
+      .slice(0, 10)
   }
 
   // https://stackoverflow.com/questions/41374572/how-to-render-an-array-of-objects-in-react
