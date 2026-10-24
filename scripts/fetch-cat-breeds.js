@@ -19,6 +19,8 @@ async function main() {
 
   // Only keep the fields cat-api.tsx uses
   const breeds = (await response.json()).map(breed => ({
+    // Names aren't unique (e.g. two "Chausie" entries), so keep the id
+    id: breed.id,
     name: breed.name,
     reference_image_id: breed.reference_image_id || null,
     description: breed.description,

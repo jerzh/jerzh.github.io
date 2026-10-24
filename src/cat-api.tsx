@@ -15,7 +15,7 @@ async function handleSearchResponse(response) {
 
 
 // Component for a single cat image
-function CatImage(props: { name: string, id: string }) {
+function CatImage(props: { id: string }) {
   // const queryClient = ReactQuery.useQueryClient()
 
   async function fetchCatImage(id: string) {
@@ -23,7 +23,7 @@ function CatImage(props: { name: string, id: string }) {
     return await handleSearchResponse(response)
   }
 
-  const query = ReactQuery.useQuery(['catImage', props.name],
+  const query = ReactQuery.useQuery(['catImage', props.id],
     () => fetchCatImage(props.id),
     { staleTime: Infinity, refetchOnWindowFocus: false })
 
@@ -54,7 +54,7 @@ function CatAPIRow(props: {breed: CatBreed}) {
       <div className='center vertical description'>
         <div className='center horizontal'>
           {breed.reference_image_id &&
-            <CatImage name={breed.name} id={breed.reference_image_id} />
+            <CatImage id={breed.reference_image_id} />
           ||
             <p> (No image provided) </p>
           }
@@ -76,6 +76,7 @@ const queryClient = new ReactQuery.QueryClient()
 // Hooray for TypeScript! Interfaces are good and type definitions
 // are also good
 interface CatBreed {
+  id: string,
   name: string,
   reference_image_id: string | null,
   description: string
@@ -83,7 +84,7 @@ interface CatBreed {
 
 interface CatState {
   query: string
-  breedData: CatBreed[]
+  breedData: CatBreed[] | null
 }
 
 // Big component for the entire CatAPI mini-project
@@ -135,7 +136,7 @@ class CatAPI extends React.Component<{}, CatState> {
           </form>
           {this.state.breedData && this.state.breedData.length > 0 &&
             this.state.breedData.map(breed =>
-              <CatAPIRow key={breed.name} breed={breed} />
+              <CatAPIRow key={breed.id} breed={breed} />
             )
           || this.state.query !== '' &&
             <div className='center horizontal full-width'>
