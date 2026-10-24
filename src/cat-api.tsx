@@ -122,23 +122,28 @@ class CatAPI extends React.Component<{}, CatState> {
   // Functional programming o.o
   render() {
     return (
-      <ReactQuery.QueryClientProvider client={queryClient}>
-        <form>
-          <label>
-            Enter query (e.g. 'american'):
-            <input type='text' value={this.state.query} onChange={this.handleChange.bind(this)}/>
-          </label>
-        </form>
-        {this.state.breedData && this.state.breedData.length > 0 &&
-          this.state.breedData.map(breed =>
-            <CatAPIRow key={breed.name} breed={breed} />
-          )
-        || this.state.query !== '' &&
-          <div className='center horizontal full-width'>
-            <p> (No search results found) </p>
-          </div>
-        }
-      </ReactQuery.QueryClientProvider>
+      <>
+        <p>
+          The Cat API now requires an API key (I guess they got hit with too many denial of service attacks), so I asked Claude to fix my broken implementation. And Claude, ever particular, insisted that I save down a local copy of the directory to avoid having my API key stored in plaintext online. I mean, I'm not exactly shaking in my boots imagining what internet hackers are gonna do with my Cat API key, but I appreciate Claude being a good generalizer, so I relented.
+        </p>
+        <ReactQuery.QueryClientProvider client={queryClient}>
+          <form>
+            <label>
+              Enter query (e.g. 'american'):
+              <input type='text' value={this.state.query} onChange={this.handleChange.bind(this)}/>
+            </label>
+          </form>
+          {this.state.breedData && this.state.breedData.length > 0 &&
+            this.state.breedData.map(breed =>
+              <CatAPIRow key={breed.name} breed={breed} />
+            )
+          || this.state.query !== '' &&
+            <div className='center horizontal full-width'>
+              <p> (No search results found) </p>
+            </div>
+          }
+        </ReactQuery.QueryClientProvider>
+      </>
     )
   }
 }
